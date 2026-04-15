@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Product Management System</title>
+
+    <link rel='stylesheet' type='text/css' href='advanced-search.css'>
+    <script src="../js/advanced-search.js"></script>
+
+    <!-- PicoCSS framework for basic styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Inika&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/inspiration" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navigation Bar: Contains links to different sections of the website -->
+    <nav class="navigator">
+
+        <div class="icon_nav_left">
+            <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
+            <a href="../Homepage/homepage.html">Home</a>
+            <a href="../our_products/ourproducts.html">Product</a>
+            <a href="../AboutUs/AboutUs.html">About us</a>
+        </div>
+
+        <div class="icon_nav_right">
+            <a href="../Advanced_search/advanced-search.html"><img src="images/WH_search.png" alt="icon"></a>
+            <a href="#"><img src="images/WH_cart.png" alt="icon"></a>
+
+        </div>
+
+    </nav>
+
+    <!-- Main Content Section: Dedicated to Product Management -->
+    <main class="container">
+        <h1 class="topic">Search</h1>
+        <!--search-header-->
+        <div class="search_wrap">
+            <div class="search_box">
+                <input id="product-name-search" type="text" class="input" placeholder="search...">
+                <button type="submit" onclick="getSearchProductName(event)" class="btn">
+                    <p>Search</p>
+                </button>
+            </div>
+        </div>
+        <section>
+            <details>
+                <summary class="sum-insertupdate" style="color:black;">Advanced Search</summary>
+                <!-- Input fields for product details -->
+                <div class="form-group">
+                    <label for="sortby">Sort by:</label>
+                    <select id="sort" name="sort" style="background-color: #FFFFFF; border: 1px solid #CCCCCC;"
+                        required>
+                        <option value="">Select Sort By</option>
+                        <option value="a-z">Alphabetically A-Z</option>
+                        <option value="z-a">Alphabetically Z-A</option>
+                        <option value="h-l">Price High-Low</option>
+                        <option value="l-h">Price Low-High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="material">Material:</label>
+                    <select id="material" name="material" style="background-color: #FFFFFF; border: 1px solid #CCCCCC;"
+                        required>
+                        <option value="" selected>Select Material</option>
+                        <option value="Q">Quartz</option>
+                        <option value="P">Pearl</option>
+                        <option value="M">Moonstone</option>
+                        <option value="J">Jade</option>
+                    </select>
+                </div>
+
+                <!-- Size Selection: Allows selecting product size -->
+                <div class="form-group" style="flex-wrap: wrap;">
+                    <label style="margin-right: 10px;">Size:</label>
+                    <!-- Size options -->
+                    <label class="checkbox-label"><input type="checkbox" name="size" value="4"> 4 MM</label>
+                    <label class="checkbox-label"><input type="checkbox" name="size" value="5"> 5 MM</label>
+                    <label class="checkbox-label"><input type="checkbox" name="size" value="6"> 6 MM</label>
+                    <label class="checkbox-label"><input type="checkbox" name="size" value="7"> 7 MM</label>
+                </div>
+                <!-- Color Selection -->
+                <div class="form-group"><label>Color:</label>
+                    <!-- Color picker options -->
+                    <label class="color-picker"><input type="checkbox" name="color" id="white" value="White" checked><span></span></label>
+                    <label class="color-picker"><input type="checkbox" name="color" id="pink" value="Pink"><span></span></label>
+                    <label class="color-picker"><input type="checkbox" name="color" id="blue" value="Blue"><span></span></label>
+                    <label class="color-picker"><input type="checkbox" name="color" id="yellow" value="Yellow"><span></span></label>
+                    <label class="color-picker"><input type="checkbox" name="color" id="green" value="Green"><span></span></label>
+                </div>
+                <!-- Form action buttons -->
+                <div class="buttonposition">
+                    <button type="submit" class="but-pm" onclick="advancedSearch(event)">Advanced Search</button>
+                    <button type="reset" class="but-pm" onclick="clearInput()">Clear</button>
+                </div>
+            </details>
+        </section>
+        <br>
+        <div class="notfound"></div>
+        <div class="product-container">
+            <div class="productLists"></div>
+            <!-- Search results will be displayed here -->
+        </div>
+    <footer>
+
+        <div class="contact_us">
+
+            <div class="logo_footer"><!--LOGO-->
+                <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
+                <p class="coporation">Seer & Amulet Co. LTD</h3>
+            </div>
+
+            <div class="About_us"><!--For Crate column-->
+                <p class="footer_title">Mutelu</p>
+                <ul class="footer-links">
+                    <li><a href="../AboutUs/AboutUs.html">About US</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Our blogs</a></li>
+                </ul>
+            </div>
+
+            <div class="Supports"><!--For Crate column-->
+                <p class="footer_title">Support</p>
+                <ul class="footer-links">
+                    <li><a href="#">Product Care</a></li>
+                    <li><a href="#">Ring Size Charts</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="login"><!--For Crate column-->
+                <p class="footer_title">Log in As Administrator</p>
+                <p class="info">sign up for the product management and user account manager</p>
+                <a href="../Admin_login/LogIn_page.html"><button type="button">Go to login page</button></a>
+            </div>
+
+
+        </div>
+
+        <div class="copyright"><!--seperate from contact us section-->
+            <p>Â© Mutelu 2024 </p>
+        </div>
+    </footer>
+    </main>
+        
+
+
+</body>
+
+
+</html>

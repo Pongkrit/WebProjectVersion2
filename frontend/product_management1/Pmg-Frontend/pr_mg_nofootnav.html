@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character Set for proper text display -->
+    <meta charset="UTF-8">
+
+    <!-- Viewport settings for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Javascript File -->
+    <script src="ProductManagement.js"></script>
+
+    <!-- Title of the webpage -->
+    <title>Product Management System</title>
+
+    <!-- Preconnect to Google Fonts for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts Import: Inika font for styling text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- PicoCSS framework for basic styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
+    <style>
+        /* Global page styles */
+
+        html,
+        body {
+            width: 100%;
+            /* Full width to the edge of the window */
+            height: 100%;
+            /* Full height to the bottom of the window */
+            margin: 0;
+            /* Remove default margin */
+            padding: 0;
+            /* Remove default padding */
+            background-color: #FFFFFF;
+            /* Ensure the background is white */
+            box-sizing: border-box;
+            /* Border and padding are included in the element's total width and height */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            /* Stack children vertically */
+        }
+
+        main {
+            flex: 1;
+            /* Causes the main content to expand to fill available space */
+            /* Other styles you may want for main, e.g., padding */
+        }
+
+        main.container {
+            display: flex;
+            flex-direction: column;
+            /* Ensure the content flows vertically */
+            justify-content: flex-start;
+            /* Align content to the start */
+            align-items: center;
+            /* Center content horizontally */
+            min-height: calc(100vh - 10vh - 10vh);
+            /* Adjust based on your navbar and footer height */
+            width: 100%;
+            /* Full width */
+            padding-top: 30px;
+        }
+
+        /* Styles for the main container if needed */
+        .container {
+            width: 100%;
+            /* Full width to the edge of the container */
+            max-width: none;
+            /* No maximum width to restrict the container */
+            padding: 0;
+            /* Remove padding that could introduce white space */
+            margin: 0 auto;
+            /* Center the container if necessary, but remove horizontal margin */
+        }
+
+        /* Navbar and footer background color */
+        nav.container-fluid,
+        footer.container {
+            background-color: #2F1514;
+            /* Dark brown background for nav and footer */
+            color: #FFFFFF;
+            /* White text color for contrast */
+        }
+
+        /* Navbar and footer link color */
+        nav.container-fluid a,
+        footer.container a {
+            color: #FFFFFF;
+            /* White color for links in nav and footer for readability */
+        }
+
+        /* Form group styling */
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            /* Space between form groups */
+        }
+
+        .form-group label {
+            margin-right: 10px;
+            /* Space between label and input */
+        }
+
+        /* Color picker styling */
+        .color-picker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            /* Circle shape for color pickers */
+            margin: 0 5px;
+            /* Space between color pickers */
+            cursor: pointer;
+            /* Pointer cursor to indicate clickable items */
+            position: relative;
+        }
+
+        .color-picker input[type='radio'] {
+            opacity: 0;
+            /* Hide the default radio input */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .color-picker span {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            /* Maintain circular shape for color picker span */
+        }
+
+        /* Specific styles for each color option in the color picker */
+        #red+span {
+            background-color: #d7b5b5;
+        }
+
+        #blue+span {
+            background-color: #dda2dd;
+        }
+
+        #green+span {
+            background-color: #71b0ca;
+        }
+
+        #yellow+span {
+            background-color: #46463a;
+        }
+
+        #purple+span {
+            background-color: #928315;
+        }
+
+        .color-picker input[type='radio']:checked+span:before {
+            content: '✓';
+            /* Checkmark to indicate selected option */
+            color: #fff;
+            /* White color for checkmark for contrast */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Center the checkmark within the picker */
+        }
+
+        h2 {
+            font-family: 'Inika', serif;
+            text-align: center;
+            /* Center the text */
+            margin-top: 20px;
+            /* Adjust the space between the navbar and this title to match your design */
+            margin-bottom: 20px;
+            /* Ensure this space is equal to the space above for symmetry */
+            width: 100%;
+            /* Ensure the h2 element spans the full width */
+        }
+
+        details {
+            width: 90%;
+            /* Example width, adjust based on your design */
+            margin: 50px auto;
+            /* Provides equal space above and below */
+            font-family: 'Inika', serif;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"],
+        select,
+        textarea {
+            background-color: #FFFFFF;
+            /* White background for input fields */
+            color: #000000;
+            /* Black text color */
+            /* Additional styling for borders, padding, etc., if needed */
+            border: 1px solid #CCCCCC;
+            /* Light gray border */
+            border-radius: 4px;
+            /* Slightly rounded corners for aesthetics */
+            padding: 8px;
+            /* Padding inside input fields for text */
+        }
+
+        /* Styles for buttons */
+        button {
+            background-color: #D3D3D3;
+            /* Gray background for buttons */
+            color: #000000;
+            /* Black text color */
+            border: none;
+            /* No border for a cleaner look */
+            padding: 10px 20px;
+            /* Padding inside buttons */
+            border-radius: 4px;
+            /* Slightly rounded corners for aesthetics */
+            cursor: pointer;
+            /* Cursor indicates clickable buttons */
+            transition: background-color 0.3s ease;
+            /* Smooth transition for hover effect */
+        }
+
+        /* Hover effect for buttons */
+        button:hover {
+            background-color: #BEBEBE;
+            /* Slightly darker gray on hover for feedback */
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar: Contains links to different sections of the website -->
+    <nav class="container-fluid">
+        <ul>
+            <!-- Branding/Logo Placeholder -->
+            <li><strong>Mutelu</strong></li>
+        </ul>
+        <ul>
+            <!-- Navigation Links -->
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">User Account Management</a></li>
+            <li><a href="#">Log out</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section: Dedicated to Product Management -->
+    <main class="container">
+        <section>
+            <!-- Section Title -->
+            <h2 style="color:black;">Product Management</h2>
+
+            <!-- Product Search Form: Allows searching by Product ID or Name -->
+            <details>
+                <summary style="color:black;">Search</summary>
+                <div class="form-group">
+                    <label for="product-id-search">Product ID:</label>
+                    <input type="text" id="product-id-search" name="product-id-search" placeholder="Enter Product ID"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="product-name-search">Product Name:</label>
+                    <input type="text" id="product-name-search" name="product-name-search"
+                        placeholder="Enter Product Name"> <br>
+                </div>
+                <!-- Action Buttons -->
+                <button type="submit" onclick="getSearchProductLists()" value="Submit">Search</button>
+                <button type="reset" onclick="clearSearchInputs()" >Clear</button>
+
+                <h3>Product List</h3>
+                <ul id="searchLists"></ul>
+            </details>
+
+            <!-- Insert & Update Product Details Form -->
+            <details>
+                <summary style="color:black;">Insert & Update</summary>
+                <!-- Input fields for product details -->
+                <div class="form-group">
+                    <label for="product-id">Product ID:</label>
+                    <input type="text" id="product-id" name="product-id" placeholder="Enter Product ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-name">Product Name:</label>
+                    <input type="text" id="product-name" name="product-name" placeholder="Enter Product Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price (THB):</label>
+                    <input type="number" id="price" name="price" placeholder="Enter Price" required>
+                </div>
+                <div class="form-group">
+                    <label for="material">Material:</label>
+                    <select id="material" name="material" required>
+                        <option value="">Select Material</option>
+                        <option value="Q">Quartz</option>
+                        <option value="P">Pearl</option>
+                        <option value="M">Moonstone</option>
+                        <option value="J">Jade</option>
+                    </select>
+                </div>
+                <!-- Size Selection: Allows selecting product size -->
+                <div class="form-group" style="flex-wrap: wrap;">
+                    <label style="margin-right: 10px;">Size:</label>
+                    <!-- Size options -->
+                    <label style="margin-right: 10px;"><input type="checkbox" name="size" value="4" checked> 4 MM</label>
+                    <label style="margin-right: 10px;"><input type="checkbox" name="size" value="5"> 5 MM</label>
+                    <label style="margin-right: 10px;"><input type="checkbox" name="size" value="6"> 6 MM</label>
+                    <label><input type="checkbox" name="size" value="7"> 7 MM</label>
+                </div>
+                <!-- Color Selection -->
+                <div class="form-group"><label>Color:</label>
+                    <!-- Color picker options -->
+                    <label class="color-picker"><input type="radio" name="color" id="red" value="red" checked><span></span></label>
+                    <label class="color-picker"><input type="radio" name="color" id="blue" value="blue"><span></span></label>
+                    <label class="color-picker"><input type="radio" name="color" id="green" value="green"><span></span></label>
+                    <label class="color-picker"><input type="radio" name="color" id="yellow" value="yellow"><span></span></label>
+                    <label class="color-picker"><input type="radio" name="color" id="purple" value="purple"><span></span></label>
+                </div>
+                <div class="form-group">
+                    <label for="product-image">Product Image:</label>
+                    <input type="url" id="product-image" name="product-image" required>
+                </div>
+                <div class="form-group">
+                    <label for="overview">Overview:</label>
+                    <textarea id="overview" name="overview" placeholder="Enter Product Overview"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" placeholder="Enter Product Description"
+                        required></textarea>
+                </div>
+                <!-- Form action buttons -->
+                <button type="submit" onclick="insertNewProduct()" value="Insert">Insert</button>
+                <button type="submit">Update</button>
+                <button type="reset" onclick="clearInsertInputs()">Clear</button>
+                
+                <h3>Product List</h3>
+                <ul id="insertLists"></ul>
+            </details>
+
+            <!-- Product Deletion Form -->
+            <details>
+                <summary style="color:black;">Delete</summary>
+                <div class="form-group">
+                    <label for="product-id-delete">Product ID:</label>
+                    <input type="text" id="product-id-delete" name="product-id-delete" placeholder="Enter Product ID"
+                        required>
+                </div>
+                <!-- Action buttons for deletion -->
+                <button onclick="deleteProduct()" type="submit">Delete</button>
+                <button onclick="clearDeleteInput()" type="reset">Clear</button>
+                <h3>Product List</h3>
+                <ul id=""></ul>
+            </details>
+        </section>
+    </main>
+
+</body>
+
+</html>

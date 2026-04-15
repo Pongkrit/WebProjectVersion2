@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Product Management System</title>
+    <link rel='stylesheet' type='text/css' href='product_management1.css'>
+    <script src="../js/ProductManagement.js"></script>
+
+    <!-- Google Fonts Import: Inika font for styling text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/inspiration" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--Start Nav Bar-->
+    <header>
+        <nav class="navigator"><!--download icon-->
+            
+            <div class="icon_nav_left"><!--Crate column for Left side text-->
+                <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
+                <a href="../Management_page/Management_Page.html">Home</a> <!--Navigate to home page-->
+                <a href="../product_management1/product_management1.html">Product Management</a> <!--Navigate to product Page page-->
+                <a href="../usermng/usermng.html">User Account Management</a> <!--Navigate to About Us page-->
+            </div>
+
+            <div class="icon_nav_right"><!--Crate column for right side text-->
+                <a href="../Homepage/homepage.html">log out</a> <!--Navigate to About Us page-->
+                            
+            </div>
+            
+        </nav>
+        
+    </header>
+
+    <!-- Main Content Section: Dedicated to Product Management -->
+    <main class="container">
+        <section>
+            <!-- Section Title -->
+            <h2 class="product-managment-head">Product Management</h2>
+
+            <!-- Product Search Form: Allows searching by Product ID or Name -->
+            <details>
+                <summary class="sum-search">Search</summary>
+                <form>
+                    <div class="form-group">
+                        <label for="product-id-search">Product ID:</label>
+                        <input type="text" id="product-id-search" name="product-id-search" placeholder="Enter Product ID" 
+                        required>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <button type="submit" class="but-pm" onclick="getSearchProductLists(event)" value="Submit">Search</button><br>
+                    <button type="reset" class="but-pm" onclick="clearSearchInputs()">Clear</button>
+                </form>
+                <h3 id="productlist-title">Product List</h3>
+                <ul id="searchLists"></ul>
+                <br><br>
+            </details>
+            <hr class="sepline">
+
+            <!-- Insert Product Details Form -->
+            <details>
+                <summary class="sum-insert">Insert</summary>
+                <form>
+                    <!-- Input fields for product details -->
+                    <div class="form-group">
+                        <label for="product-id">Product ID:</label>
+                        <input type="text" id="product-id" name="product-id" placeholder="Enter Product ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-name">Product Name:</label>
+                        <input type="text" id="product-name" name="product-name" placeholder="Enter Product Name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price (THB):</label>
+                        <input type="number" id="price" name="price" placeholder="Enter Price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="material">Material:</label>
+                        <select id="material" name="material" required>
+                            <option value="">Select Material</option>
+                            <option value="Q">Quartz</option>
+                            <option value="P">Pearl</option>
+                            <option value="M">Moonstone</option>
+                            <option value="J">Jade</option>
+                        </select>
+                    </div>
+                    <!-- Size Selection: Allows selecting product size -->
+                    <div class="form-group">
+                        <label>Size:</label>
+                        <!-- Size options -->
+                        <label class="checkbox-label"><input type="radio" class="rd_size" name="size" value="4"> 4 MM</label>
+                        <label class="checkbox-label"><input type="radio" class="rd_size" name="size" value="5"> 5 MM</label>
+                        <label class="checkbox-label"><input type="radio" class="rd_size" name="size" value="6"> 6 MM</label>
+                        <label class="checkbox-label"><input type="radio" class="rd_size" name="size" value="7"> 7 MM</label>
+                    </div>
+                    <div class="form-group"><label>Color:</label>
+                        <!-- Color picker options -->
+                        <label class="color-picker"><input type="checkbox" name="color" id="white" value="White"><span></span></label>
+                        <label class="color-picker"><input type="checkbox" name="color" id="pink" value="Pink"><span></span></label>
+                        <label class="color-picker"><input type="checkbox" name="color" id="blue" value="Blue"><span></span></label>
+                        <label class="color-picker"><input type="checkbox" name="color" id="yellow" value="Yellow"><span></span></label>
+                        <label class="color-picker"><input type="checkbox" name="color" id="green" value="Green"><span></span></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">Product Image:</label>
+                        <input type="url" id="product-image" name="product-image" placeholder="Enter Image URL"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="overview">Overview:</label>
+                        <textarea id="overview" name="overview" placeholder="Enter Product Overview"
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" placeholder="Enter Product Description"
+                            required></textarea>
+                    </div>
+                    <!-- Form action buttons -->
+                    <button type="submit" class="but-pm" onclick="insertNewProduct(event)" value="Insert">Insert</button><br>
+                    <button type="reset" class="but-pm" onclick="clearInsertInputs()">Clear</button>
+                </form>
+                <h3 id="productlist-title">Product List</h3>
+                <div id="insertLists"></div>
+                <br><br>
+            </details>
+            <hr class="sepline">
+
+            <!-- Update Product Details Form -->
+            <details>
+                <summary class="sum-update">Update</summary>
+                <!-- Input fields for product details -->
+                <form>
+                    <div class="form-group">
+                        <label for="product-id">Product ID:</label>
+                        <input type="text" id="update-product-id" name="product-id" placeholder="Enter Product ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-name">Product Name:</label>
+                        <input type="text" id="update-product-name" name="product-name" placeholder="Enter Product Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="update-quantity" name="quantity" placeholder="Enter Quantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price (THB):</label>
+                        <input type="number" id="update-price" name="price" placeholder="Enter Price">
+                    </div>
+                    <div class="form-group">
+                        <label for="material">Material:</label>
+                        <select id="update-material" name="material">
+                            <option value="">Select Material</option>
+                            <option value="Q">Quartz</option>
+                            <option value="P">Pearl</option>
+                            <option value="M">Moonstone</option>
+                            <option value="J">Jade</option>
+                        </select>
+                    </div>
+                    <!-- Size Selection: Allows selecting product size -->
+                    <div class="form-group">
+                        <label style="margin-right: 10px;">Size:</label>
+                        <!-- Size options -->
+                        <label class="checkbox-label"><input type="radio" name="rd_size" value="4"> 4 MM </label>
+                        <label class="checkbox-label"><input type="radio" name="rd_size" value="5"> 5 MM </label>
+                        <label class="checkbox-label"><input type="radio" name="rd_size" value="6"> 6 MM </label>
+                        <label class="checkbox-label"><input type="radio" name="rd_size" value="7"> 7 MM </label>
+                    </div>
+                    <div class="form-group"><label>Color:</label>
+                        <!-- Color picker options -->
+                        <label class="color-picker"><input type="checkbox" name="update-color" id="white" value="White"><span></span></label>
+                        <label class="color-picker"><input type="checkbox" name="update-color" id="pink" value="Pink"><span></span></label>
+                        <label class="color-picker"><input type="checkbox" name="update-color" id="blue" value="Blue"><span></span></label>
+                        <label class="color-picker"><input type="checkbox" name="update-color" id="yellow" value="Yellow"><span></span></label>
+                        <label class="color-picker"><input type="checkbox" name="update-color" id="green" value="Green"><span></span></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">Product Image:</label>
+                        <input type="url" id="update-product-image" name="product-image" placeholder="Enter Image URL">
+                    </div>
+                    <div class="form-group">
+                        <label for="overview">Overview:</label>
+                        <textarea id="update-overview" name="overview" placeholder="Enter Product Overview"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="update-description" name="description"
+                            placeholder="Enter Product Description"></textarea>
+                    </div>
+                    <!-- Form action buttons -->
+                    <button type="submit" class="but-pm" onclick="updateProduct(event)">Update</button><br>
+                    <button type="reset" class="but-pm">Clear</button>
+                </form>
+                <div id="updateLists"></div>
+                <br><br>
+            </details>
+            <hr class="sepline">
+
+            <!-- Product Deletion Form -->
+            <details>
+                <summary class="sum-delete">Delete</summary>
+                <form>
+                    <div class="form-group">
+                        <label for="product-id-delete">Product ID:</label>
+                        <input type="text" id="product-id-delete" name="product-id-delete"
+                            placeholder="Enter Product ID" required>
+                    </div>
+                    <!-- Action buttons for deletion -->
+                    <button type="submit" class="but-pm" onclick="deleteProduct(event)">Delete</button><br>
+                    <button type="reset" class="but-pm" onclick="clearDeleteInput()">Clear</button>
+                </form>
+                <div id="deleteLists"></div>
+                <br><br>
+            </details>
+            <hr class="sepline">
+        </section>
+    </main>
+
+    <!--Start Footer-->
+    <footer>
+                
+        <div class = "contact_us">
+
+            <div class="logo_footer"><!--LOGO-->
+                <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
+                <p class = "coporation">Seer & Amulet Co. LTD</h3>
+            </div>
+            
+        </div>
+        
+        <div class="copyright"><!--seperate from contact us section-->
+            <p>© Mutelu 2024 </p>
+        </div>
+    </footer>
+    <!--End Footer-->
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>adminprofile1</title>
+    <link rel="stylesheet" href="adminprofile1.css">
+    <script src="../js/adminprofile1.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inika&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/inspiration" rel="stylesheet">
+
+    <!--For Toggle Password Visibility Button-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navigator">
+
+            <div class="icon_nav_left">
+                <p class="Mutelu" style="font-family:'inspiration';" > Mutelu </p>
+                <a href="..Management_page/Management_Page.html">Home</a> <!--Navigate to home page-->
+                <a href="../product_management1/product_management1.html">Product Management</a> <!--Navigate to product Page page-->
+                <a href="../usermng/usermng.html">User Account Management</a> <!--Navigate to About Us page-->
+            </div>
+
+            <div class="icon_nav_right">
+                <a href="../Homepage/homepage.html">log out</a> <!--Navigate to About Us page-->
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <div class="employee-info">
+            <img src="" alt="Employee Photo" class="employee-photo">
+            <div class="info">
+                <br>
+
+            </div>
+
+        </div>
+
+        <div class="account-box">
+            <p class="account-title">ACCOUNT INFOMATION</p>
+            <div class="username">
+                <label for="username">Username: </label>
+                <input type="text" id="username" value="Annalisa0001" readonly>
+
+            </div>
+            <div class="password">
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" value="Nali2024" readonly>
+                    <i class="bi bi-eye-slash" id="togglePassword"></i>
+            </div>
+            
+
+        </div>
+        <button class="back-button">Back</button>
+
+        <script>
+            document.querySelector('.back-button').addEventListener('click', function() {
+                window.history.back();
+            });
+        </script>
+    </main>
+    
+
+    <footer>
+
+        <div class="contact_us">
+
+            <div class="logo_footer"><!--LOGO-->
+                <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
+                <p class = "coporation">Seer & Amulet Co. LTD</h3>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>© Mutelu 2024 </p>
+        </div>
+    </footer>
+
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function (e) {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+    </script>
+</body>
+
+</html>

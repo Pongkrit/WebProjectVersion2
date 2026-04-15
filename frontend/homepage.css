@@ -1,0 +1,407 @@
+* {/* To applied font to all page*/
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #301515;
+    top:0;/* To ensure nav bar is in the top*/
+    
+}
+
+nav {/* box of nav bar*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;/* space between text*/
+    background-color: #301515;
+    color: white;/* font color white*/
+    font-size: 3vw;/* font adjust with webpage*/
+    height: 4%;
+    width: 100%;/* To ensure nav bar adjust with page size*/
+    padding: 10px;
+    position:fixed;/* To ensure nav bar position always stay in the top*/
+    top:0;
+    z-index: 999;/* To ensure nav bar is on top(lazy way)*/
+    
+}
+
+/* If the screen is more than or equal to 768px wide, nav font size will limit to 18*/
+@media (min-width: 768px) {
+    nav {
+        font-size: 18px; /* Set a specific font size for larger screens */
+    }
+}
+
+.navigator a {
+    text-decoration: none; /* Remove underline */
+}
+
+.icon_nav_left,
+.icon_nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.icon_nav_left a,
+.icon_nav_right a {
+    margin-left: 15px; /* Adjust spacing between links */
+    color: white;
+}
+
+.icon_nav_right {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.icon_nav_right img {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px; /* Adjust spacing between icons */
+    margin-right: 30px;
+}
+
+
+.icon_nav_left p {
+    font-size: 30px; 
+    margin-right: 10px;
+    padding-left: 20px;
+}
+
+
+/*------------------------Info--------------------------------*/
+/*A-hi a-hi a-hi a-hi It our main attraction time darling!!!*/
+.container {
+    max-width: 100%; 
+    margin: 0 auto; 
+    position: relative; /* Make container a positioning context for absolute positioning */
+}
+
+.homepage_pic{
+    height:auto;
+    width: 100%;
+}
+
+.image-container {
+    position: relative; /* Positioning context for absolute positioning */
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f8f8f8;
+}
+
+.logo {
+    font-size: 10vw;
+    margin-bottom: 20px; /* Add margin below the logo */
+}
+
+.slogan {
+    font-size: 1.5vw;
+    margin-bottom: 15px; /* Add margin below the slogan */
+}
+
+.image-container p{
+    font-size: 24;
+    color: #f8f8f8;
+}
+
+/*
+button {
+    padding: 10px 20px; 
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; 
+}
+
+button:hover {
+    background-color: #45a049;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5); 
+}
+*/
+
+button {
+    padding: 4% 7%;
+    font-size: 2vw;
+    background-color: rgb(48, 21, 21, 0.60);
+    color: #f8f8f8;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+    max-width: 220px;
+    max-height: 65;
+}
+
+button:hover {
+    background-color: rgb(48, 21, 21, 0.9);
+    box-shadow: 0 0 5px 5px rgba(48, 21, 21, 0.5);
+}
+
+@media (min-width: 1080px) {
+    button {
+        padding: 20px 40px;
+        border-radius: 50px;
+        font-size: 20px; /* Set a specific font size for larger screens */
+    }
+}
+
+/*-----------------------------Our Product-----------------------------*/
+
+.our_product_text {/*'Our Product' text*/
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 550;
+    text-align: center;
+    font-size: 38px;
+}
+
+.our_product {/*our product choice box*/
+    display: grid;
+    justify-content: center;
+    gap: 40px;
+    max-width: 80%;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 70px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ipad */
+@media screen and (max-width: 992px){
+    .our_product{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* mobile */
+@media screen and (max-width: 768px){
+    .our_product{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+.product_item {
+    position: relative; /*Act as parent to product name*/
+    height: 240px;
+    width: 240px; 
+    text-align: center;
+    margin-bottom: 50px; /* Increase margin between product items */
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.product_name {/*Inside Product item*/
+    position: absolute; /*For text overlap to their parent, free x y position*/
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    font-size: 30px;
+    opacity: 0;
+}
+
+.product_item:hover .product_image {/*When cursor touch product item, it turn grey*/
+    filter: grayscale(30%); /* Grayscale the image on hover */
+}
+
+.product_item:hover .product_name {
+    opacity: 1; /* Grayscale the image on hover */
+}
+
+/*-----------------------------Location-----------------------------*/
+.location {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 550;
+    text-align: center;
+    font-size: 38px;
+}
+
+#map {
+    width: 80%;
+    height: 800px;
+    background-color: grey;
+    margin: 0 auto; /* Center horizontally */
+}
+
+    /* Optional media query for smaller screens */
+    @media (max-width: 768px) {
+    #map {
+        height: 500px; /* Adjust height for smaller screens */
+    }
+}
+
+/*-------------------------Whatever is dis shit call footer-------------------------*/
+/* Existing CSS rules above */
+
+/* Footer styles */
+footer {
+    margin-top: 80px;
+    background-color: #301515;
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    height: 240px;
+    width: 100%;/* Sets the width of the footer to fill the container */
+    display: flex;
+    flex-direction: column; /* Align children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+}
+
+.footer-links {
+    color: #8b8b8b; 
+}
+
+.Mutelu{
+    font-size: 64px;
+    text-align: center;
+}
+
+.coporation {
+    text-align: center;
+    font-size: 16px; 
+    margin-top: 10px; 
+}
+
+
+.title {
+    color: white; 
+}
+
+.contact_us {
+    display: flex; /*Display as flex*/
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 15px;/*add space below*/ 
+}
+
+.title{
+    font-size: 22px;
+}
+
+/* Styling for the unordered list within the contact section */
+.contact_us ul {
+    color: #a7a7a7;
+    font-size: 15px; 
+    list-style-type: none; /* Remove bullet points */
+}
+
+/* Styling for the divs within the contact section */
+.contact_us > div {
+    flex: 1;
+    margin-right: 45px;
+}
+
+/* Removes margin from the last div within the contact section */
+.contact_us > div:last-child {
+    margin-right: 0;
+}
+
+
+.contact_us p .title {
+    font-size: 30px;
+    margin-top: 15px; 
+}
+
+.contact_us .login {
+    flex: 1; /* Make login div take remaining space */
+    text-align: center; 
+}
+
+.contact_us .login button {
+    margin-top: 10px; 
+}
+
+.copyright-text {
+    margin-top: 25px; 
+    text-align: center;
+    
+}
+
+.footer-links li a {
+    color: rgb(240, 240, 240);
+}
+
+
+/* Footer login section styles */
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.login p {
+    margin-bottom: 10px; /* Add margin below login paragraph */
+}
+
+/* Footer button styles */
+footer button {
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: rgb(235, 235, 235); 
+    color: rgb(46, 46, 46); 
+    border: none;
+    border-radius: 13px;
+    cursor: pointer;
+    margin-top: 75px; 
+}
+
+footer button:hover {
+    background-color: #f8f8f8; 
+    box-shadow: 0 0 3px 3px rgba(211, 211, 211, 0.5); /*when cursor touch button the button glow*/
+}
+
+@media (max-width: 768px) {/*When the screen is shorter than 768px then...*/
+    footer {
+        padding: 10px;
+        height: auto;
+    }
+
+    .contact_us {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left */
+        text-align: left; 
+    }
+
+    .contact_us > div {/* Adds vertical margin to contact section divs */
+        margin: 10px 0;
+    }
+
+    .Mutelu{
+        align-items: flex-start;/* Aligns items within 'Mutelu' class to the left */
+        text-align: left; 
+    }
+    .login {
+        margin-top: 20px;
+        align-items: flex-start;
+        text-align: left; 
+    }
+
+    footer button {
+        margin-top: 20px;
+    }
+
+    .copyright-text {/* Aligns copyright text to the left */
+        text-align: left; 
+        margin-top: 5px; 
+        margin-bottom: 5px; 
+    }
+}

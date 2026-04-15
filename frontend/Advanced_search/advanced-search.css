@@ -1,0 +1,560 @@
+* {
+    /*font setting*/
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Global page styles */
+html,
+body {
+    width: 100%;/* Full width to the edge of the window */
+    height: 100%;/* Full height to the bottom of the window */
+    margin: 0;/* Remove default margin */
+    padding: 0;/* Remove default padding */
+    background-color: #FFFFFF;/* Ensure the background is white */
+    box-sizing: border-box;/* Border and padding are included in the element's total width and height */
+}
+
+body {
+    display: flex;
+    flex-direction: column;/* Stack children vertically */
+    min-height: 100vh; /* Ensure that body takes up the full height of the viewport */
+}
+
+main {
+    flex: 1;
+    min-height: calc(100vh - 10vh - 10vh - 240px);
+    /* Causes the main content to expand to fill available space */
+    width: 100%;
+}
+
+main.container {
+    display: flex;
+    flex-direction: column;/* Ensure the content flows vertically */
+    justify-content: flex-start;/* Align content to the start */
+    align-items: center;/* Center content horizontally */
+    min-height: calc(100vh - 10vh - 10vh);/* Adjust based on your navbar and footer height */
+    width: 100%;/* Full width */
+    padding-top: 30px;
+}
+
+.topic {
+    text-align: center;
+    padding: 10px;
+    padding-top: 60px;
+}
+
+/*nav*/
+.icon_nav_left .Mutelu {
+    align-items: flex-start;
+    text-align:  left;
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #301515;
+    color: white;
+    font-size: 3vw;
+    height: 4%;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+
+}
+
+@media (min-width: 768px) {
+    nav {
+        font-size: 18px;
+        /* Set a specific font size for larger screens */
+    }
+}
+
+.navigator a {
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.icon_nav_left,
+.icon_nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.icon_nav_left a,
+.icon_nav_right a {
+    margin-left: 15px;
+    /* Adjust spacing between links */
+    color: white;
+}
+
+.icon_nav_right {
+    display: flex;
+    align-items: center;
+    /* Center items vertically */
+}
+
+.icon_nav_right img {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    /* Adjust spacing between icons */
+    margin-right: 30px;
+}
+
+
+.icon_nav_left p {
+    font-size: 30px;
+    margin-right: 10px;
+    padding-left: 20px;
+}
+
+/*search box*/
+.search_wrap{
+    padding-left: 70px;
+}
+
+.search_wrap .search_box{
+	position: relative;
+	width: 500px;
+	height: 60px;
+}
+
+.search_wrap .search_box .input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px 20px;
+	border-radius: 3px;
+	font-size: 18px;
+}
+
+.search_wrap .search_box .btn{
+	position: absolute;
+	width: 60px;
+	height: 100%;
+	background: #381010;
+	z-index: 1;
+	cursor: pointer;
+    left: 55%;
+}
+
+.search_wrap .search_box .btn:hover{
+	background: #af7a7d;	
+}
+
+
+.search_wrap .search_box .input{
+	border-radius: 50px;
+}
+.search_wrap .search_box .btn{
+	width: 125px;
+	height: 45px;
+	top: 8px;
+	border-radius: 3px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search_wrap .search_box .btn{
+	border-radius: 25px;
+}
+.search_wrap .search_box .input{
+	padding-right: 100px;
+}
+/* Styles for the main container if needed */
+.container {
+    width: 100%;/* Full width to the edge of the container */
+    max-width: none;/* No maximum width to restrict the container */
+    padding: 0;/* Remove padding that could introduce white space */
+    margin: 0 auto;/* Center the container if necessary, but remove horizontal margin */
+}
+
+label {
+    color: black; /* Ensures all <label> text is black */
+}
+
+
+/* Form group styling */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    /* Space between form groups */
+}
+
+.form-group label {
+    margin-right: 10px;
+    /* Space between label and input */
+}
+
+/* Color picker styling */
+.color-picker {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;/* Circle shape for color pickers */
+    margin: 0 5px;/* Space between color pickers */
+    cursor: pointer;/* Pointer cursor to indicate clickable items */
+    position: relative;
+}
+
+.color-picker input[type='checkbox'] {
+    opacity: 0;/* Hide the default radio input */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.color-picker span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;/* Maintain circular shape for color picker span */
+}
+
+/* Specific styles for each color option in the color picker */
+#white+span {
+    background-color: #d8d3d3a9;
+}
+
+#pink+span {
+    background-color: #dda2dd;
+}
+
+#blue+span {
+    background-color: #5bc2ed;
+}
+
+#yellow+span {
+    background-color: #fae82c;
+}
+
+#green+span {
+    background-color: #47e74d;
+}
+
+.color-picker input[type='checkbox']:checked+span:before {
+    content: '\2714';/* Checkmark to indicate selected option */
+    color: #fff;/* White color for checkmark for contrast */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);/* Center the checkmark within the picker */
+}
+
+h2.search-head {
+    font-family: 'Inika', serif;
+    text-align: center;/* Center the text */
+    margin-top: 20px;/* Adjust the space between the navbar and this title to match your design */
+    margin-bottom: 20px;/* Ensure this space is equal to the space above for symmetry */
+    width: 100%;/* Ensure the h2 element spans the full width */
+    color:black;
+}
+section{
+    width:80%;
+}
+details {
+    width: 100%;/* Example width, adjust based on your design */
+    margin: 50px auto;/* Provides equal space above and below */
+    font-family: 'Inika', serif;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem; /* Space between form groups */
+    flex-wrap: wrap; /* Allows items to wrap in small screens */
+}
+
+/* Ensure labels have a consistent width */
+.form-group label:not(.color-picker, .checkbox-label),.PB-range-slider-div label{
+    margin-right: 10px; /* Space between label and input */
+    width: 20%; /* Adjust this value as needed to ensure alignment */
+    min-width: 120px; /* Ensures labels don't become too small on narrow screens */
+    text-align: right; /* Aligns the text to the right of the label */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+select,
+textarea {
+    background-color: #FFFFFF;/* White background for input fields */
+    color: #000000;/* Black text color */
+    border: 1px solid #CCCCCC;/* Light gray border */
+    border-radius: 4px;/* Slightly rounded corners for aesthetics */
+    padding: 8px;/* Padding inside input fields for text */
+    width: 100%; /* Uniform width for all input elements */
+    max-width: 400px; /* Maximum width to ensure elements don't become too large */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width */
+    flex-grow: 1; /* Allows input and select elements to fill available space */
+    margin-left: 10px; /* Adds some space between the label and the input/select */
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-left: 0; /* Removes additional left margin for alignment */
+    /* Add any specific styles for radio buttons and checkboxes here */
+}
+
+label.checkbox-label {
+    margin-right: 10px;
+}
+
+/* Styles for buttons */
+button.but-pm {
+    background-color: #D3D3D3;/* Gray background for buttons */
+    color: #000000;/* Black text color */
+    border: none;/* No border for a cleaner look */
+    padding: 10px 20px;/* Padding inside buttons */
+    border-radius: 4px;/* Slightly rounded corners for aesthetics */
+    cursor: pointer;/* Cursor indicates clickable buttons */
+    transition: background-color 0.3s ease;/* Smooth transition for hover effect */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #BEBEBE;
+    /* Slightly darker gray on hover for feedback */
+}
+.buttonposition{
+    text-align: end;
+}
+
+summary.sum-search,.sum-insertupdate,.sum-delete{
+    position: relative;
+    padding: 10px;
+    background: #D9D9D9;
+    text-align: center;
+    font-size: 1.5em;
+    cursor: pointer; /*make cursor become pointer when point at it*/
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+footer {
+    margin-top: 130%;
+    background-color: #301515;
+    color: white;
+    padding: 20px;
+    bottom: 0;/*footer position*/
+    height: 240px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Align children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+}
+
+.footer-links {
+    color: #8b8b8b; 
+}
+
+.Mutelu{
+    font-size: 64px;
+    text-align: center;
+}
+
+.coporation {
+    text-align: center;
+    font-size: 16px; 
+    margin-top: 10px; 
+}
+
+
+.footer_title {
+    color: white; 
+}
+
+.contact_us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 15px; 
+}
+
+.title{
+    font-size: 22px;
+}
+
+/* Styling for the unordered list within the contact section */
+.contact_us ul {
+    color: #a7a7a7;
+    font-size: 15px; 
+    list-style-type: none; /* Remove bullet points */
+}
+
+/* Styling for the divs within the contact section */
+.contact_us > div {
+    flex: 1;
+    margin-right: 45px;
+}
+
+/* Removes margin from the last div within the contact section */
+.contact_us > div:last-child {
+    margin-right: 0;
+}
+
+.contact_us p .title {
+    font-size: 30px;
+    margin-top: 15px; 
+}
+
+.contact_us .login {
+    flex: 1; /* Make login div take remaining space */
+    text-align: center; 
+}
+
+.contact_us .login button {
+    margin-top: 10px; 
+}
+
+.copyright-text {
+    margin-top: 25px; 
+    text-align: center;
+    
+}
+
+.footer-links li a {
+    color: rgb(240, 240, 240);
+}
+
+
+/* Footer login section styles */
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.login p {
+    margin-bottom: 10px; /* Add margin below login paragraph */
+}
+
+/* Footer button styles */
+footer button {
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: rgb(235, 235, 235); 
+    color: rgb(46, 46, 46); 
+    border: none;
+    border-radius: 13px;
+    cursor: pointer;
+    margin-top: 75px; 
+}
+
+footer button:hover {
+    background-color: #f8f8f8; 
+    box-shadow: 0 0 3px 3px rgba(211, 211, 211, 0.5); /*when cursor touch button the button glow*/
+}
+
+@media (max-width: 768px) {/*When the screen is shorter than 768px then...*/
+    footer {
+        bottom: 100px;
+    }
+
+    .contact_us {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left */
+        text-align: left; 
+    }
+
+    .contact_us > div {/* Adds vertical margin to contact section divs */
+        margin: 10px 0;
+    }
+
+    .Mutelu{
+        align-items: flex-start;/* Aligns items within 'Mutelu' class to the left */
+        text-align: left; 
+    }
+    .login {
+        margin-top: 20px;
+        align-items: flex-start;
+        text-align: left; 
+    }
+
+    footer button {
+        margin-top: 20px;
+    }
+
+    .copyright-text {/* Aligns copyright text to the left */
+        text-align: left; 
+        margin-top: 5px; 
+        margin-bottom: 5px; 
+    }
+
+    .product-grid{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product{
+        margin: 5px;
+        max-width: 33%;
+        margin-block-end:auto ;
+    }
+}
+/* =============== After this Editing by Ching ====================== */
+a{
+    color: unset;
+    text-decoration: none;
+}
+.product-container{
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    padding-top: 10px;
+    text-align: center;
+    font-family: "Imprima", sans-serif;;
+}
+.productLists .item img{
+    width: 100%;
+    /* filter: drop-shadow(0 20px 20px #443f3f) */
+}
+.productLists{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.productLists .item{
+    background-color: rgb(253, 247, 242);
+    padding: 12px;
+}
+.productLists .item h2{
+    font-size: medium;
+    font-weight: 500;
+}
+.productLists .item .price{
+    letter-spacing: 2px;
+    font-size: large;
+}
+/* ipad */
+@media screen and (max-width: 992px){
+    .productLists{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* mobile */
+@media screen and (max-width: 768px){
+    .productLists{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.notfound {
+    font-size: xx-large;
+    text-align: center;
+    color: rgb(163, 157, 157);
+}

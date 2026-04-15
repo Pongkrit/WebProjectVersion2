@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>employee Management System</title>
+
+    <link rel='stylesheet' href='usermng.css'>
+    <script src="../js/usermng.js"></script>
+
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script><!--download icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inika&display=swap" rel="stylesheet"><!--download font Inika-->
+    <link href="https://fonts.cdnfonts.com/css/inspiration" rel="stylesheet"><!--download font inspiration-->
+
+</head>
+
+<body>
+    <!-- Navigation Bar: Contains links to different sections of the website -->
+    <head>
+    <title>Employee Management System</title>
+
+    <!-- Google Fonts Import: Inika font for styling text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/inspiration" rel="stylesheet">
+
+</head>
+    <!--Start Nav Bar-->
+    <header>
+        <nav class="navigator"><!--download icon-->
+            
+            <div class="icon_nav_left"><!--Crate column for Left side text-->
+                <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
+                <a href="../Management_page/Management_Page.html">Home</a> <!--Navigate to home page-->
+                <a href="../product_management1/product_management1.html">Product Management</a> <!--Navigate to product manage page-->
+                <a href="../usermng/usermng.html">User Account Management</a> <!--Navigate to Employee Page page-->
+            </div>
+
+            <div class="icon_nav_right"><!--Crate column for right side text-->
+                <a href="../Homepage/homepage.html">log out</a> <!--Navigate to About Us page-->
+                            
+            </div>
+            
+        </nav>
+        
+    </header>
+
+    <!-- Main Content Section: Dedicated to Employee Management -->
+    <main class="container">
+        <section>
+            <!-- Section Title -->
+            <h2 class="product-managment-head">User Account Management</h2>
+
+            <!-- Employee Search Form: Allows searching by Employee ID or Name -->
+            <details>
+                <summary class="sum-search">Search</summary>
+                <form>
+                    <div class="form-group">
+                        <label for="employee-id-search">Employee ID:</label>
+                        <input type="text" id="employee-id-search" name="employee-id-search" placeholder="Enter employee ID"
+                            required>
+                    </div>
+                    <!-- Action Buttons -->
+                    <div class="buttonposition">
+                        <button type="submit" class="but-pm" onclick="getSearchAccountLists(event)">Search</button>
+                        <button type="reset" class="but-pm">Clear</button>
+                    </div>
+                </form>
+                <h3 id="accountlist-title">Employee List</h3>
+                <div id="searchLists"></div>
+            </details>
+            <hr class="sepline">
+
+            <!-- Insert Employee Details Form -->
+            <details>
+                <summary class="sum-insert">Insert</summary>
+                <form>
+                    <div class="form-group">
+                        <label for="employee-id">Employee ID:</label>
+                        <input type="text" id="employee-id" name="employee-id" placeholder="Enter employee ID " 
+                        pattern="[A-Z][a-z]{2}[0-9]{4}" 
+                        title="Please enter an employee ID starting with an uppercase letter, followed by two lowercase letters, and then four digits. (Pattern: [A-Z][a-z]{2}[0-9]{4})"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employee-fname">First Name:</label>
+                        <input type="text" id="employee-fname" name="employee-fname" placeholder="Enter employee's First Name"
+                        maxlength="100" 
+                        title="Maxlength of this input is 100 characters."
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employee-lname">Last Name:</label>
+                        <input type="text" id="employee-lname" name="employee-lname" placeholder="Enter employee's Last Name"
+                        maxlength="100" title="Maxlength of this input is 100 characters." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter Username" 
+                        maxlength="107" title="Maxlength of this input is 107 characters." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter Password" 
+                        maxlength="50" title="Maxlength of this input is 50 characters." required>
+                    </div>
+                    <div class="form-group" required>
+                        <label for="gd">Gender:</label>
+                        <label class="checkbox-label"><input type="radio" class="rd_size" name="gd" value="M" required>M</label>
+                        <label class="checkbox-label"><input type="radio" class="rd_size" name="gd" value="F" required>F</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact:</label>
+                        <input type="text" id="contact" name="contact" placeholder="Enter Phone Number" 
+                        pattern="[0-9]{3}-[0-9]{7}" title="Please input your contact with this pattern xxx-xxxxxxx (Pattern: [0-9]{3}-[0-9]{7})" 
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <textarea id="address" name="address" placeholder="Enter Address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="employee-image">Profile Image:</label>
+                        <input type="url" id="employee-image" name="employee-image" placeholder="Enter Image URL">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role:</label>
+                        <select id="role" name="role" required>
+                            <option value="">-- Select Role --</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Junior Admin">Junior Admin</option>
+                        </select>
+                    </div>
+                    <!-- Form action buttons -->
+                    <div class="buttonposition">
+                        <button type="submit" class="but-pm" onclick="insertNewUser(event)">Insert</button>
+                        <button onclick="clearField()" type="reset" class="but-pm">Clear</button>
+                    </div>
+                    <br><br>
+                    <h3>Caution:</h3><br>
+                    <p><b>*The EmpID and Username cannot changed after the first insertion.</b> <br>
+                        (If you want to edit, you need to delete that account first,then insert it again with EmpID and Username you want.)</p><br><br>
+                </form>
+                <div id="insertLists"></div>
+            </details>
+            <hr class="sepline">
+
+            <!-- Update Employee Details Form -->
+            <details>
+                <summary class="sum-update">Update</summary>
+                <form>
+                    <div class="form-group">
+                        <label for="update-employee-id">Employee ID:</label>
+                        <input type="text" id="update-employee-id" name="employee-id" placeholder="Enter employee ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-employee-fname">First Name:</label>
+                        <input type="text" id="update-employee-fname" name="employee-fname" placeholder="Enter employee's First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-employee-lname">Last Name:</label>
+                        <input type="text" id="update-employee-lname" name="employee-lname" placeholder="Enter employee's Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-username">Username:</label>
+                        <input type="text" id="update-username" name="username" placeholder="Enter Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-password">Password:</label>
+                        <input type="password" id="update-password" name="password" placeholder="Enter Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-gd">Gender:</label>
+                        <label class="checkbox-label"><input type="radio" class="rd_size" name="update-gd" value="M">M</label>
+                        <label class="checkbox-label"><input type="radio" class="rd_size" name="update-gd" value="F">F</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-contact">Contact:</label>
+                        <input type="text" id="update-contact" name="contact" placeholder="Enter Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-email">Email:</label>
+                        <input type="text" id="update-email" name="email" placeholder="Enter Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-address">Address:</label>
+                        <textarea id="update-address" name="address" placeholder="Enter Username"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-employee-image">employee Image:</label>
+                        <input type="url" id="update-employee-image" name="employee-image" placeholder="Enter Image URL">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-role">Role:</label>
+                        <select id="update-role" name="role">
+                            <option value="">-- Select Role --</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Junior Admin">Junior Admin</option>
+                        </select>
+                    </div>
+
+                    <!-- Form action buttons -->
+                    <div class="buttonposition">
+                        <button type="submit" onclick="updateUser(event)" class="but-pm">Update</button>
+                        <button onclick="clearField()" type="reset" class="but-pm">Clear</button>
+                    </div>
+                    <br>
+                    <br>
+                    
+                    <ul class="Requirements"><h3>Requirements:</h3><br>
+                        <li><b>Editting his employee information and his account password:</b> You need to input the correct EmpID and Username of that employee, then the password and new data will be edited successfully.</li>
+                        <br>
+                        <li><b>*The EmpID and Username cannot be changed after the first insertion.</b> (If you want to edit, you need to delete that account first, then insert it again with the EmpID and Username you want.)</li>
+                    </ul><br>
+                    <br>
+
+                    </form>
+                    <br>
+                    
+                    <div id="updateLists"></div>
+            </details>
+            <hr class="sepline">
+
+            <!-- Delete Employee Details Form -->
+            <details>
+                <summary class="sum-delete">Delete</summary>
+                <!-- Input fields for Employee details -->
+                <form>
+                    <div class="form-group">
+                        <label for="employee-id-delete">Employee ID:</label>
+                        <input type="text" id="employee-id-delete" name="employee-id-delete" placeholder="Enter Employee ID"
+                            required>
+                    </div>
+                    <!-- Action buttons for deletion -->
+                    <div class="buttonposition">
+                        <button type="submit" class="but-pm" onclick="deleteUser(event)">Delete</button>
+                        <button type="reset" class="but-pm">Clear</button>
+                    </div>
+                </form>
+                <div id="deleteLists"></div>
+            </details>
+            <hr class="sepline">
+        </section>
+    </main>
+    <!--Start Footer-->
+    <footer>
+
+        <div class="contact_us">
+
+            <div class="logo_footer"><!--LOGO-->
+                <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
+                <p class="coporation">Seer & Amulet Co. LTD</h3>
+            </div>
+
+        </div>
+
+        <div class="copyright"><!--seperate from contact us section-->
+            <p>© Mutelu 2024 </p>
+        </div>
+    </footer>
+    <!--End Footer-->
+</body>
+<script>
+    function clearField()
+    {
+    document.getElementById('employee-id').value='';
+    document.getElementById('employee-name').value='';
+    document.getElementById('password').value='';
+    }
+    </script>
+
+</html>

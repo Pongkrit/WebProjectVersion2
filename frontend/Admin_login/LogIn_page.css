@@ -1,0 +1,240 @@
+* {
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #301515;
+    top:0;
+    
+}
+a{
+    text-decoration: none; /* Remove underline */
+    color: white;
+    
+}
+/* Global page styles */
+html,
+body {
+    width: 100%;/* Full width to the edge of the window */
+    height: 100%;/* Full height to the bottom of the window */
+    margin: 0;/* Remove default margin */
+    padding: 0;/* Remove default padding */
+    background-color: #FFFFFF;/* Ensure the background is white */
+    box-sizing: border-box;/* Border and padding are included in the element's total width and height */
+}
+
+body {
+    display: flex;
+    flex-direction: column;/* Stack children vertically */
+}
+
+main {
+    flex: 1;
+    min-height: 100vh;
+    /* Causes the main content to expand to fill available space */
+}
+
+main.container {
+    display: flex;
+    flex-direction: row;/* Ensure the content flows vertically */
+    justify-content: flex-start;/* Align content to the start */
+    min-height: calc(100vh - 10vh - 10vh);/* Adjust based on your navbar and footer height */
+    width: 100%;/* Full width */
+    padding-top: 30px;
+    background-color: #ffffff;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #301515;
+    color: white;
+    font-size: 3vw;
+    height: 4%;
+    width: 100%;
+    padding: 10px;
+    position:fixed;
+    top:0;
+    z-index: 999;
+    
+}
+
+@media (min-width: 768px) {
+    nav {
+        font-size: 18px; /* Set a specific font size for larger screens */
+    }
+}
+
+.navigator a {
+    text-decoration: none; /* Remove underline */
+}
+
+.icon_nav_left,
+.icon_nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.icon_nav_left a,
+.icon_nav_right a {
+    margin-left: 15px; /* Adjust spacing between links */
+    color: white;
+}
+
+.icon_nav_right {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.icon_nav_right img {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px; /* Adjust spacing between icons */
+    margin-right: 30px;
+}
+
+
+.icon_nav_left p {
+    font-size: 30px; 
+    margin-right: 10px;
+    padding-left: 20px;
+}
+
+
+
+
+/* FORM*/
+div.containers {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: #FFFFFF;
+    padding-top: 10%;
+    
+}
+
+
+/* INPUT FORM*/
+div.containers h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 64px;
+    font-family:'inspiration';
+}
+
+input[type="text"] {
+    margin-top: 50px;
+    width: 58%;
+    padding: 17px;
+    margin-bottom: 32px;
+    border-radius: 10px;
+    background: #D9D9D9;
+    font-size: 24px;
+    border: none;
+}
+
+input[type="password"] {
+    width: 58%;
+    padding: 17px;
+    border-radius: 10px;
+    background: #D9D9D9;
+    font-size: 24px;
+    border: none;
+}
+
+button[type="submit"] {
+    margin-top: 15%;
+    width: 25%;
+    padding: 10px;
+    background-color: #301515;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 24px;
+    display: inline-block;
+}
+
+
+
+/*-----------------FOOTER-----------------*/
+footer {
+    margin-top: 80px; 
+    background-color: #301515;
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    height: 240px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.logo_footer {
+    /*left: 20px; /* Adjust the distance from the left edge */
+    display: flex;
+    flex-direction: column;
+}
+
+.Mutelu {
+    font-size: 64px;
+    text-align: left;
+    margin: 0;
+    padding-left: 30px;
+}
+
+.coporation {
+    text-align: left;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+/* FORGOT PASSWORD*/
+p .password{
+    margin-top: -15%;
+    margin-left: 30%;
+    color: #301515;
+    font-size: 20px;
+    position:static;
+}
+
+.password {
+    text-decoration: none;
+    color: #301515;
+}
+
+
+.row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}   
+
+.columnleft{
+    width: 50%;
+    background: #ffffff;
+}
+.columnleft img{
+    width: 100%;
+}
+.columnright {
+    width: 50%;
+    
+}

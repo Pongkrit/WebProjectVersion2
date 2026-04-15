@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="LogIn_page.css">
+    <script src="../js/LogIn_page.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inika&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/inspiration" rel="stylesheet">
+</head>
+
+<body>
+    <!--301515-->
+    <header>
+        <nav class="navigator">
+
+            <div class="icon_nav_left">
+                <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
+                <a href="../Homepage/homepage.html">Home</a>
+                <a href="../our_products/ourproducts.html">Product</a>
+                <a href="../AboutUs/AboutUs.html">About us</a>
+            </div>
+
+            <div class="icon_nav_right">
+                <a href="../Advanced_search/advanced-search.html"><img src="images/Search Symbol.png" alt="icon"></a>
+                <a href="#"><img src="images/Cart Symbol.png" alt="icon"></a>
+
+            </div>
+
+        </nav>
+        <main class="container">
+                <article class="columnleft">
+                    <img src="images/Rectangle 25.png" alt="logonav">
+                </article>
+                <article class="columnright">
+                    <div class="containers">
+                        <form action="/login" method="post">
+                            <h1>Mutelu</h1>
+                            <h2>Admin Login</h2>
+                            <input type="text" id="username" name="username" placeholder="Username">
+                            <input type="password" id="password" name="password" placeholder="Password">
+                            <p><a class="password" href="#">Forgot your password?</a></p>
+                            <button type="submit" onclick="signin(event)"><a href="../Management_page/Management_Page.html">Sign in</a></button>
+                        </form>
+                    </div>
+                </article>
+        </main>
+        <footer>
+            <!--Start Footer-->
+            <div class="contact_us">
+
+                <div class="logo_footer"><!--LOGO-->
+                    <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
+                    <p class="coporation">Seer & Amulet Co. LTD</h3>
+                </div>
+
+            </div>
+
+            <div class="copyright"><!--seperate from contact us section-->
+                <p>© Mutelu 2024 </p>
+            </div>
+        </footer>
+        <!--End Footer-->
+</body>
+
+</html>

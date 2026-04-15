@@ -1,0 +1,195 @@
+/*-----------------HEADER-----------------*/
+* { /* To applied font to all page*/
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+/*---------------------------Start NAV bar---------------------------*/
+header {
+    background-color: #301515;
+    top:0;/* To ensure nav bar is in the top*/
+    
+}
+
+nav {/* box of nav bar*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;/* space between text*/
+    background-color: #301515;
+    color: white;/* font color white*/
+    font-size: 3vw;/* font adjust with webpage*/
+    height: 4%;
+    width: 100%;/* To ensure nav bar adjust with page size*/
+    padding: 10px;
+    position:fixed;/* To ensure nav bar position always stay in the top*/
+    top:0;
+    z-index: 999;/* To ensure nav bar is on top(lazy way)*/
+    
+}
+
+/* If the screen is more than or equal to 768px wide, nav font size will limit to 18*/
+@media (min-width: 768px) {
+    nav {
+        font-size: 18px; 
+    }
+}
+
+.navigator a {
+    text-decoration: none; /* Remove underline */
+}
+
+.icon_nav_left,
+.icon_nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.icon_nav_left a,
+.icon_nav_right a {
+    margin-left: 15px; /* Adjust spacing between links */
+    color: white;
+}
+
+.icon_nav_right {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-right: 25px;
+}
+
+.icon_nav_left p {
+    font-size: 30px; 
+    margin-right: 10px;
+    padding-left: 20px;
+}
+
+
+/*------------------BODY------------------*/
+.container {
+    max-width: 100%; 
+    margin: 0 auto; 
+    position: relative; /* Make container a positioning context for absolute positioning */
+}
+
+.homepage_pic{
+    height:auto;
+    width: 100%;
+}
+
+.image-container {
+    position: relative; /* Positioning context for absolute positioning */
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f8f8f8;
+}
+
+.logo {
+    font-size: 10vw;
+    margin-bottom: 20px; /* Add margin below the logo */
+}
+
+.slogan {
+    font-size: 1.5vw;
+    margin-bottom: 15px; /* Add margin below the slogan */
+}
+
+.image-container p{
+    font-size: 24;
+    color: #f8f8f8;
+}
+
+
+/*------------------BODY------------------*/
+.our_product_text {/*'Our Product' text*/
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 550;
+    text-align: center;
+    font-size: 38px;
+}
+
+.our_product {/*our product choice box*/
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    flex-wrap: wrap; 
+    margin-top: 70px; 
+}
+
+.product_item {
+    position: relative; /*Act as parent to product name*/
+    height: 240px;
+    width: 240px; 
+    text-align: center;
+    margin-bottom: 50px; /* Increase margin between product items */
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.product_name {/*Inside Product item*/
+    position: absolute; /*For text overlap to their parent, free x y position*/
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    font-size: 30px;
+    opacity: 1;
+}
+
+.product_item:hover .product_image {/*When cursor touch product item, it turn grey*/
+    filter: grayscale(30%); /* Grayscale the image on hover */
+}
+
+
+/*-----------------FOOTER-----------------*/
+footer {
+    margin-top: 80px; 
+    background-color: #301515;
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    height: 240px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.logo_footer {
+    /*left: 20px; /* Adjust the distance from the left edge */
+    display: flex;
+    flex-direction: column;
+}
+
+.Mutelu {
+    font-size: 64px;
+    text-align: left;
+    margin: 0;
+    padding-left: 30px;
+}
+
+.coporation {
+    text-align: left;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+

@@ -1,0 +1,218 @@
+* {
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*--------------------------Navbar--------------------------*/
+header {
+    background-color: #301515;
+    top:0;/* To ensure nav bar is in the top*/
+    
+}
+
+nav {/* box of nav bar*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;/* space between text*/
+    background-color: #301515;
+    color: white;/* font color white*/
+    font-size: 3vw;/* font adjust with webpage*/
+    height: 4%;
+    width: 100%;/* To ensure nav bar adjust with page size*/
+    padding: 10px;
+    position:fixed;/* To ensure nav bar position always stay in the top*/
+    top:0;
+    z-index: 999;/* To ensure nav bar is on top(lazy way)*/
+    
+}
+
+/* If the screen is more than or equal to 768px wide, nav font size will limit to 18*/
+@media (min-width: 768px) {
+    nav {
+        font-size: 18px; 
+    }
+}
+
+.navigator a {
+    text-decoration: none; /* Remove underline */
+}
+
+.icon_nav_left,
+.icon_nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.icon_nav_left a,
+.icon_nav_right a {
+    margin-left: 15px; /* Adjust spacing between links */
+    color: white;
+}
+
+.icon_nav_right {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-right: 25px;
+}
+
+.icon_nav_left p {
+    font-size: 30px; 
+    margin-right: 10px;
+    padding-left: 20px;
+}
+/*--------------------------Main:Admin_Profile--------------------------*/
+body {
+    padding-top: 120px; /* Adjust this value based on the actual height of your navbar */
+}
+
+/* .main {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.start_bold{
+    font-weight: 700;
+}
+
+.employee-info {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 243, 0.7);
+    width: 60%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Optional: Add a fluorescent glow effect */
+    border-radius: 12px;
+}
+
+.employee-photo {
+    margin-right: 50px;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px 0 0 12px; /* Rounded border on the left side only */
+}
+
+.info p {
+    margin: 5px 0;
+}
+
+.emp-id {
+    font-size: xx-large;
+}
+
+.account-box {
+    margin-top: 50px;
+    margin-left: 39%;
+    padding: 20px;
+    background-color: rgba(229, 251, 255, 0.8);
+    width: 300px;
+    border-radius: 10px;
+}
+
+.account-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.username,
+.password {
+    margin-top: 20px;
+}
+
+.username{
+    margin-left: 20px;
+}
+
+.password{
+    margin-left: 25px;
+    margin-bottom: 3%;
+}
+
+form i {
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+
+input {
+    border-radius: 5px;
+    border-color: transparent;
+    padding-block: 5px;
+}
+
+
+.back-button {
+    margin-top: 40px;
+    margin-left: 20%;
+    background-color: lightgray;
+    color: black;
+    padding: 10px 35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: rgb(215, 187, 187); /* Change the background color when hovering */
+}
+
+/*--------------------------Footer--------------------------*/
+footer {
+    margin-top: 80px; 
+    background-color: #301515;
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    height: 240px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.logo_footer {
+    /*left: 20px; /* Adjust the distance from the left edge */
+    display: flex;
+    flex-direction: column;
+}
+
+.Mutelu {
+    font-size: 64px;
+    text-align: left;
+    margin: 0;
+    padding-left: 30px;
+}
+
+.coporation {
+    text-align: left;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ============== Ching Editing ============ */
+.info {
+    margin-right: 5%;
+    p {
+        margin-top: 10px;
+    }
+}
+body {
+    background-image: url(https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?cs=srgb&dl=pexels-stywo-1261728.jpg&fm=jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}

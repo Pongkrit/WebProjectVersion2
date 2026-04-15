@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Imprima');
+
+* { /* To applied font to all page*/
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Inika", serif;
+}
+/*---------------------------Start NAV bar---------------------------*/
+header {
+    background-color: #301515;
+    top:0;/* To ensure nav bar is in the top*/
+    
+}
+
+nav {/* box of nav bar*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;/* space between text*/
+    background-color: #301515;
+    color: white;/* font color white*/
+    font-size: 3vw;/* font adjust with webpage*/
+    height: 4%;
+    width: 100%;/* To ensure nav bar adjust with page size*/
+    padding: 10px;
+    position:fixed;/* To ensure nav bar position always stay in the top*/
+    top:0;
+    z-index: 999;/* To ensure nav bar is on top(lazy way)*/
+    
+}
+
+/* If the screen is more than or equal to 768px wide, nav font size will limit to 18*/
+@media (min-width: 768px) {
+    nav {
+        font-size: 18px; 
+    }
+}
+
+.navigator a {
+    text-decoration: none; /* Remove underline */
+}
+
+.icon_nav_left,
+.icon_nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.icon_nav_left a,
+.icon_nav_right a {
+    margin-left: 15px; /* Adjust spacing between links */
+    color: white;
+}
+
+.icon_nav_right {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-right: 25px;
+}
+
+.icon_nav_left p {
+    font-size: 30px; 
+    margin-right: 10px;
+    padding-left: 20px;
+}
+
+/*---------------------------Start Body Section---------------------------*/
+.preview{
+    background-color: rgb(216, 209, 216, 0.8);
+    color: rgb(75, 74, 74);
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    display: flex;
+    top: 56px; /* Adjust this value to position the preview below the navbar */
+    left: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Center the columns horizontally */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 100px; /*Make a space between nav and product detail*/
+}
+
+.left_column {
+    flex: 1; /* Allow the column to grow and shrink */
+    max-width: 400x;/* Left column sizee */
+    margin-left: 20px;
+    margin-right: 5px; /* Add a fixed margin between the columns */
+    border-radius: none;
+    color: black;
+    background-color: #ffffff;
+}
+
+.right_column {
+    flex: 1; /* Allow the column to grow and shrink */
+    max-width: 500px;/* right column sizee */
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-right: 5px;
+    color: black;
+    background-color: #ffffff;
+}
+
+/*@media screen and (min-width: 768px) {
+    .container {
+        justify-content: center; 
+    }
+
+    .left_column,
+    .right_column {
+        flex-basis: 45%; 
+    }
+
+    .left_column {
+        margin-right: 30px; 
+    }
+
+}*/
+
+
+/*-------------------Left column-------------------*/
+
+
+.left_column {/*Picture column*/
+    max-width: 750px; /* Adjust as needed */
+    margin: auto; /* Center the container */
+    border-radius: none;
+    color: black;
+    background-color: #ffffff;
+    margin-top: 25px;
+}
+
+.main_product {
+    width: 100%; 
+    max-width: 100%; 
+}
+
+.addition {
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap; 
+}
+
+.sub_product {
+    width: 80px; 
+    margin: 5px; 
+    max-width: 100%; 
+}
+
+
+/*-------------------right column-------------------*/
+
+.right_column {/*Detail column*/
+    max-width: 500px; 
+    margin: auto; 
+    padding: 10px;
+    border-radius: 8px;
+    color: black;
+    background-color: #ffffff;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black !important; /*To make sure font is black, and emphasis that this is*/
+}
+
+.p_left-price, .Materials-color {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.color{
+    display: flex;
+    align-items: center;
+}
+
+.color p {
+    margin-right: 5px; /* Add a small space between the color text and span */
+}
+
+.color span {
+    color: pink;
+}
+
+.Materials{
+    display: inline-table;
+}
+
+.detail {
+    font-size: small;
+}
+
+.p_left {
+    color:red;
+}
+
+.quantity-cart {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.quantity button {
+    font-size: 16px;
+    padding: 6px 8px;
+    border: 0.5px solid black;
+    border-radius: 0;
+    background-color: #b1afaf;
+    color: black;
+}
+
+.qty_numbers{
+    padding: 6px 30px;
+    width: 65px;
+    background-color: #ffffff !important;
+}
+
+/* .quantity button:hover {
+    background-color: #696969;
+} */
+
+.cart button {/* purchase button*/
+    padding: 13px 30px;
+    border: none; 
+    border-radius: 5px;
+    background-color: #301515;
+    color: white;
+    cursor: pointer;
+}
+
+/* .cart:hover {
+    background-color: #797979; 
+    border-radius: 5px;
+    box-shadow: 0 0 3px 3px rgba(97, 97, 97, 0.5); 
+} */
+/*-------------------Description-------------------*/
+.description-container {/*Description box*/
+    text-align: center;
+    margin-top: 20px;
+    width: 90%;
+    padding: 0 15px;
+}
+
+.Description {
+    padding: 20px;
+    text-align: justify;
+    max-width: 100%;/*Ensure that description box will not go be with left and right column*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Description h3 {
+    font-weight: bold;
+    border-bottom: 1px solid #301515; 
+    padding-bottom: 10px; 
+    margin-bottom: 20px; 
+}
+
+
+.button-container {
+    width:100%;
+    text-align: left; /* Align the button to the right within the footer */
+    margin-top: 25px; /* Adjust margin as needed */
+    margin-left: 5%;
+}
+
+.back {
+    padding: 8px 23px;
+    font-size: 16px;
+    background-color: rgb(189, 189, 189); 
+    color: rgb(49, 49, 49); 
+    border: none;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.back:hover {
+    background-color: #6d6d6d; 
+    box-shadow: 0 0 3px 3px rgba(211, 211, 211, 0.5); 
+}
+
+/*.back {
+    padding: 8px 23px;
+    font-size: 16px;
+    background-color: rgb(189, 189, 189); 
+    color: rgb(49, 49, 49); 
+    border: none;
+    border-radius: 13px;
+    cursor: pointer;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px; /* Adjust as needed 
+    left: 20px; /* Align to the left side of the screen 
+}*/
+
+
+/*---------------------------Start Footer Section---------------------------*/
+
+footer {
+    margin-top: 80px; 
+    background-color: #301515;
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    height: 240px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.logo_footer {
+    /*left: 20px; /* Adjust the distance from the left edge */
+    display: flex;
+    flex-direction: column;
+}
+
+.Mutelu {
+    font-size: 64px;
+    text-align: left;
+    margin: 0;
+    padding-left: 30px;
+}
+
+.coporation {
+    text-align: left;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ================= Ching Editing =============== */
+.left_column .main_product {
+    width:80%;
+    margin-left: 10%;
+}
+
+.right_column ,.title, .description-container{
+    font-family: "Imprima", Serif;
+}
+
+.title {
+    font-size: 35px;
+}

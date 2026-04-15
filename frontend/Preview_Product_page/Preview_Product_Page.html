@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Preview Product Page</title>
+        <link rel="stylesheet" href="Preview_Product_Page.css">
+        <script src="../js/Preview_Product_Page.js"></script>
+        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script> <!--download icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inika&display=swap" rel="stylesheet" ><!--download font Inika-->
+        <link href="https://fonts.cdnfonts.com/css/inspiration" rel="stylesheet"><!--download font inspiration-->
+    </head>
+
+    <body>
+        
+        <!--Start Nav Bar-->
+
+        <header>
+            <nav class="navigator"><!--download icon-->
+                
+                <div class="icon_nav_left"><!--Crate column for Left side text-->
+                    <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
+                    <a href="../Management_page/Management_Page.html">Home</a> <!--Navigate to home page-->
+                    <a href="../product_management1/product_management1.html">Product Management</a> <!--Navigate to product Page page-->
+                    <a href="../usermng/usermng.html">User Account Management</a> <!--Navigate to About Us page-->
+                </div>
+
+                <div class="icon_nav_right"><!--Crate column for right side text-->
+                    <a href="../Homepage/homepage.html">log out</a> <!--Navigate to About Us page-->
+                                
+                </div>
+                
+            </nav>
+            
+        </header>
+
+        <!--End Nav Bar-->
+
+        <div class="preview">
+            <p>This page is for Preview Product Information ONLY!</p>
+        </div>
+        <!--Start Detail body}-->
+
+        <!--Product picture-->
+        <main class="container"> <!--To make picture, product detail and description in one group--> 
+            <div class = "left_column"> <!--to group all product pictures--> 
+                <img class="main_product" src="" alt="">
+                <!-- <div class="addition"> 
+                    <img class="sub_product" src="images/product_add1.png" alt="">
+                    <img class="sub_product" src="images/product_add2.png" alt="">
+                    <img class="sub_product" src="images/product_add3.png" alt="">
+                    <img class="sub_product" src="images/product_add4.png" alt="">
+                </div> -->
+            </div>
+
+            <!--Product Detail-->
+            <div class="right_column"> <!--start of product detail-->
+                <p class="title"></p> 
+            
+                <div class="details"><!--all addition product detail-->
+
+            
+                    <div class="Materials-color"><!--group tag and material for easy flex-->
+                        
+                        <div class="color">
+                            <!-- <p>Color: <span id="colorcircle" class="fa fa-circle"></span></p> -->
+                        </div>
+            
+                        <div class="Materials">
+                            <!-- <p>Material: <span id="materialPlaceholder">Quartz Crystal</span></p> -->
+                        </div>
+
+                    </div>
+            
+                    <div class="detail">
+                        <section></section>
+                    </div>
+            
+                    <div class="p_left-price"><!--group products left and price for easy flex-->
+                        <div class="p_left">
+                            <p id="productleftPlaceholder"></p>
+                        </div>
+            
+                        <div class="price"><!--Product Price-->
+                            <h2 id="pricePlaceholder"></h2>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="quantity-cart"><!--group quantity and add to cart button for easy flex-->
+                    <div class="quantity">
+                        <button type="button" class="decreased">-</button>
+                        <button type="input" class="qty_numbers">1</button>
+                        <button type="button" class="increase">+</button>
+                    </div>
+            
+                    <div class="cart">
+                        <button>Add to Cart</button>
+                    </div>
+
+                </div>
+            </div>
+            
+
+        <!--Description-->
+            <div class="description-container"><!--For create description table -->
+                <div class = "Description"><!--For create description table -->
+                    <h3>Description</h3>
+                    <section class="content-description"></section>
+                </div>
+            </div>
+
+            <!-- Back Button -->
+            <div class="button-container">
+                <button type="button" class="back">Back</button>
+            </div>
+
+            <script>
+                document.querySelector('.back').addEventListener('click', function() {
+                    window.history.back();
+                });
+            </script> 
+
+        </main>
+
+        <!--End Detail body-->
+
+        <!--Start Footer-->
+        <footer>
+        
+            <div class = "contact_us">
+    
+                <div class="logo_footer"><!--LOGO-->
+                    <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
+                    <p class = "coporation">Seer & Amulet Co. LTD</h3>
+                </div>
+                
+            </div>
+            
+            <div class="copyright"><!--seperate from contact us section-->
+                <p>© Mutelu 2024 </p>
+            </div>
+        </footer>
+        <!--End Footer-->
+
+
+    </body>

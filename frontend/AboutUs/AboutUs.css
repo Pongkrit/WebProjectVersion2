@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inspiration&display=swap');
+
+body{
+    font-family: inika;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+/* nav bar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #301515;
+    color: white;
+    font-size: 3vw;
+    height: 4%;
+    width: 100%;
+    padding: 10px;
+    position:fixed;
+    top:0;
+    z-index: 999;
+    
+}
+
+@media (min-width: 768px) {
+    nav {
+        font-size: 18px; /* Set a specific font size for larger screens */
+    }
+}
+
+.navigator a {
+    text-decoration: none; /* Remove underline */
+}
+
+.icon_nav_left,
+.icon_nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.icon_nav_left a,
+.icon_nav_right a {
+    margin-left: 15px; /* Adjust spacing between links */
+    color: white;
+}
+
+.icon_nav_right {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.icon_nav_right img {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px; /* Adjust spacing between icons */
+    margin-right: 30px;
+}
+
+
+.icon_nav_left p {
+    font-size: 30px; 
+    margin-right: 10px;
+    padding-left: 20px;
+}
+
+/* Content */
+header{
+    text-align: center;
+    font-size: 200%;
+    margin-top: 100px;
+}
+
+table{
+    font-family: inconsolata;
+    font-size: larger;
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 40px;
+    img{
+        width: 250px;
+        height: auto;
+    }
+}
+
+/* footer */
+footer {
+    margin-top: 80px;
+    background-color: #301515;
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    height: 240px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Align children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+}
+
+.footer-links {
+    color: #8b8b8b; 
+}
+
+.Mutelu{
+    font-family: Inspiration;
+    font-size: 64px;
+    text-align: center;
+}
+
+.coporation {
+    text-align: center;
+    font-size: 16px; 
+    margin-top: 10px; 
+    padding: 0px;
+}
+
+
+.title {
+    color: white; 
+}
+
+.contact_us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 15px; 
+}
+
+.title{
+    font-size: 22px;
+}
+
+.contact_us ul {
+    color: #a7a7a7;
+    font-size: 15px; 
+    list-style-type: none; /* Remove bullet points */
+}
+
+.contact_us > div {
+    flex: 1;
+    margin-right: 45px;
+}
+
+.contact_us > div:last-child {
+    margin-right: 0;
+}
+
+
+
+.contact_us p .title {
+    font-size: 30px;
+    margin-top: 15px; 
+}
+
+.contact_us .login {
+    flex: 1; /* Make login div take remaining space */
+    text-align: center; 
+}
+
+.contact_us .login button {
+    margin-top: 10px; 
+}
+
+.copyright-text {
+    margin-top: 25px; 
+    text-align: center;
+    
+}
+
+.footer-links li a {
+    color: rgb(240, 240, 240);
+}
+
+
+/* Footer login section styles */
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.login p {
+    margin-bottom: 10px; /* Add margin below login paragraph */
+}
+
+/* Footer button styles */
+footer button {
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: rgb(235, 235, 235); 
+    color: rgb(46, 46, 46); 
+    border: none;
+    border-radius: 13px;
+    cursor: pointer;
+    margin-top: 75px; 
+}
+
+footer button:hover {
+    background-color: #f8f8f8; 
+    box-shadow: 0 0 3px 3px rgba(211, 211, 211, 0.5);
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 10px;
+        height: auto;
+    }
+
+    .contact_us {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left */
+        text-align: left; 
+    }
+
+    .contact_us > div {
+        margin: 10px 0;
+    }
+
+    .Mutelu{
+        align-items: flex-start;
+        text-align: left; 
+    }
+    .login {
+        margin-top: 20px;
+        align-items: flex-start;
+        text-align: left; 
+    }
+
+    footer button {
+        margin-top: 20px;
+    }
+
+    .copyright-text {
+        text-align: left; 
+        margin-top: 5px; 
+        margin-bottom: 5px; 
+    }
+}

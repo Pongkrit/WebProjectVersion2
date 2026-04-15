@@ -1,0 +1,364 @@
+/*---------------------------Start NAV bar---------------------------*/
+header {
+    background-color: #301515;
+    top:0;/* To ensure nav bar is in the top*/
+    
+}
+
+nav {/* box of nav bar*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;/* space between text*/
+    background-color: #301515;
+    color: white;/* font color white*/
+    font-size: 3vw;/* font adjust with webpage*/
+    height: 4%;
+    width: 100%;/* To ensure nav bar adjust with page size*/
+    padding: 10px;
+    position:fixed;/* To ensure nav bar position always stay in the top*/
+    top:0;
+    z-index: 999;/* To ensure nav bar is on top(lazy way)*/
+    
+}
+
+/* If the screen is more than or equal to 768px wide, nav font size will limit to 18*/
+@media (min-width: 768px) {
+    nav {
+        font-size: 18px; 
+    }
+}
+
+.navigator a {
+    text-decoration: none; /* Remove underline */
+}
+
+.icon_nav_left,
+.icon_nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.icon_nav_left a,
+.icon_nav_right a {
+    margin-left: 15px; /* Adjust spacing between links */
+    color: white;
+}
+
+.icon_nav_right {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-right: 25px;
+}
+
+.icon_nav_left p {
+    font-size: 30px; 
+    margin-right: 10px;
+    padding-left: 20px;
+}
+
+
+/* ----------------Global page styles------------------- */
+* {
+    font-family: "Inika", serif;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+/*-----------------Main: Product Management System-----------------*/
+main.container {
+    display: flex;
+    flex-direction: column;/* Ensure the content flows vertically */
+    align-items: center;/* Center content horizontally */
+    width: 100%;/* Full width */
+    padding-top: 30px;
+}
+
+/* Form group styling */
+.form-group {
+    display: flex;
+    flex-direction: center;
+    margin-bottom: 1rem;
+    /* Space between form groups */
+}
+
+label {
+    color: black; /* Ensures all <label> text is black */
+    font-size: 1.1em;
+}
+
+.form-group label {
+    margin-right: 10px;
+    /* Space between label and input */
+}
+
+/* Set radio function for size */
+label.checkbox-label {
+    margin-left: 6px;
+    margin-right: 15px;
+}
+
+input[type='radio'].rd_size {
+    width: 20px;
+    height: 20px;
+}
+
+/* Color picker styling */
+.color-picker {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;/* Circle shape for color pickers */
+    margin: 0 5px;/* Space between color pickers */
+    cursor: pointer;/* Pointer cursor to indicate clickable items */
+    position: relative;
+}
+
+.color-picker input[type='checkbox'] {
+    opacity: 0;/* Hide the default radio input */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.color-picker span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;/* Maintain circular shape for color picker span */
+}
+
+/* Specific styles for each color option in the color picker */
+#white+span {
+    background-color: #d8d3d3a9;
+}
+
+#pink+span {
+    background-color: #dda2dd;
+}
+
+#blue+span {
+    background-color: #5bc2ed;
+}
+
+#yellow+span {
+    background-color: #fae82c;
+}
+
+#green+span {
+    background-color: #47e74d;
+}
+
+.color-picker input[type='checkbox']:checked+span:before {
+    content: ' \2714';/* Checkmark to indicate selected option */
+    color: #fff;/* White color for checkmark for contrast */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);/* Center the checkmark within the picker */
+}
+
+h2.product-managment-head {
+    font-size: 30px;
+    font-family: 'Inika', serif;
+    text-align: center;/* Center the text */
+    margin-top: 10%;/* Adjust the space between the navbar and this title to match your design */
+    margin-bottom: 20px;/* Ensure this space is equal to the space above for symmetry */
+    width: 100%;/* Ensure the h2 element spans the full width */
+    color:black;
+}
+
+details {
+    width: 90%;/* Example width, adjust based on your design */
+    margin: 50px auto;/* Provides equal space above and below */
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem; /* Space between form groups */
+    flex-wrap: wrap; /* Allows items to wrap in small screens */
+    margin-top: 25px;
+}
+
+/* Ensure labels have a consistent width */
+.form-group label:not(.color-picker, .checkbox-label) {
+    margin-right: 10px; /* Space between label and input */
+    width: 20%; /* Adjust this value as needed to ensure alignment */
+    min-width: 120px; /* Ensures labels don't become too small on narrow screens */
+    text-align: right; /* Aligns the text to the right of the label */
+}
+
+/* Style for input box */
+input[type="text"],
+input[type="number"],
+input[type="url"],
+select,
+textarea {
+    background-color: #FFFFFF;/* White background for input fields */
+    font-size: 1.1em;
+    border: 1px solid #CCCCCC;/* Light gray border */
+    border-radius: 5px;/* Slightly rounded corners for aesthetics */
+    padding: 8px;/* Padding inside input fields for text */
+    width: 100%; /* Uniform width for all input elements */
+    max-width: 400px; /* Maximum width to ensure elements don't become too large */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width */
+    flex-grow: 1; /* Allows input and select elements to fill available space */
+    margin-left: 10px; /* Adds some space between the label and the input/select */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+select {
+    height: 60px;
+}
+
+textarea {
+    height: 80px;
+}
+
+/* Styles for buttons */
+button.but-pm {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #D3D3D3;/* Gray background for buttons */
+    color: #000000;/* Black text color */
+    font-size: 1.1em;
+    border: none;/* No border for a cleaner look */
+    padding: 10px 20px;/* Padding inside buttons */
+    border-radius: 4px;/* Slightly rounded corners for aesthetics */
+    cursor: pointer;/* Cursor indicates clickable buttons */
+    transition: background-color 0.3s ease;/* Smooth transition for hover effect */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #BEBEBE;
+    /* Slightly darker gray on hover for feedback */
+}
+
+/* Line that under summary */
+hr.sepline {
+    width: 91.5%;
+    margin-left: 5%;
+}
+
+/* Set the Summary function */
+summary::-webkit-details-marker {
+    display: none;
+  }
+
+summary.sum-search,.sum-insert,.sum-update,.sum-delete{
+    list-style: none;
+    cursor: pointer;
+    width: 1000px;
+    font-size: 22.5px;
+}
+
+summary::after {
+    content: ' \276F'; /* Character used for the arrow */
+    position: absolute;
+    font-size: 0.8em; /* Adjusts the size of the arrow */
+    pointer-events: none; /* Prevents the pseudo-element from capturing clicks */
+    color: #b0a8a8;
+    transition: 0.2s; /* animation when the bow point down*/
+}
+
+/* Set the bow position */
+summary.sum-search::after{
+    margin-left: 800px;
+}
+summary.sum-insert::after{
+    margin-left: 802px;
+}
+summary.sum-update::after{
+    margin-left: 790px;
+}
+summary.sum-delete::after{
+    margin-left: 800px;
+}
+
+/* Rotate the bow tp point down */
+details[open] > summary::after {
+    transform: rotate(90deg);
+}
+
+/*-----------------FOOTER-----------------*/
+footer {
+    margin-top: 150px; 
+    background-color: #301515;
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    height: 240px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.logo_footer {
+    /*left: 20px; /* Adjust the distance from the left edge */
+    display: flex;
+    flex-direction: column;
+}
+
+.Mutelu {
+    font-size: 64px;
+    text-align: left;
+    margin: 0;
+    padding-left: 30px;
+}
+
+.coporation {
+    text-align: left;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ========== Ching: Show Product List ==========*/
+#productlist-title{
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ================= Ching: Search Table ================= */
+#productlist-title{
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+th {
+    background-color: #2F1514;
+    color: #FFFFFF;
+}
+
+tbody tr:hover {
+    background-color: #D6EEEE;
+}
+
+/* ================= Ching: Delete Table ================= */
+#deleteLists, #updateLists{
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
