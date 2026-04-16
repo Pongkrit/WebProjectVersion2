@@ -35,7 +35,7 @@ function getSearchProductLists(event) {
 
                 data.data.forEach(product => {
                     tableHTML += `
-                        <tr  onclick="window.location.href='/Preview_Product_page/Preview_Product_Page.html?productID=${product.ProductID}'">
+                        <tr  onclick="window.location.href = `${basePath}/Preview_Product_page/Preview_Product_Page.html?productID=${product.ProductID}`">
                             <td>${product.ProductID}</td>
                             <td>${product.P_name}</td>
                             <td>${product.P_size}</td>

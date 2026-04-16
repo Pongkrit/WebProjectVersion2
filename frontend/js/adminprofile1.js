@@ -38,7 +38,7 @@ function showDetail () {
     // => return to home page
     if (!thisAccount){
         console.log(empId);
-        window.location.href = "/usermng/usermng.html";
+        window.location.href = `${basePath}/usermng/usermng.html`;
     }
     // and if has, add data this product in html
     // call image from google drive link

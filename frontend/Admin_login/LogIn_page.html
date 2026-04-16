@@ -16,7 +16,7 @@
 
             <div class="icon_nav_left">
                 <p class="Mutelu" style="font-family:'inspiration';"> Mutelu </p>
-                <a href="../Homepage/homepage.html">Home</a>
+                <a href="../index.html">Home</a>
                 <a href="../our_products/ourproducts.html">Product</a>
                 <a href="../AboutUs/AboutUs.html">About us</a>
             </div>
@@ -34,13 +34,13 @@
                 </article>
                 <article class="columnright">
                     <div class="containers">
-                        <form action="/login" method="post">
+                        <form onsubmit="signin(event)">
                             <h1>Mutelu</h1>
                             <h2>Admin Login</h2>
-                            <input type="text" id="username" name="username" placeholder="Username">
-                            <input type="password" id="password" name="password" placeholder="Password">
+                            <input type="text" id="username" name="username" placeholder="Username" required>
+                            <input type="password" id="password" name="password" placeholder="Password" required>
                             <p><a class="password" href="#">Forgot your password?</a></p>
-                            <button type="submit" onclick="signin(event)"><a href="../Management_page/Management_Page.html">Sign in</a></button>
+                            <button type="submit">Sign in</button>
                         </form>
                     </div>
                 </article>

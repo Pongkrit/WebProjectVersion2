@@ -38,7 +38,7 @@ function showDetail () {
     // => return to home page
     if (!thisProduct){
         console.log(productId);
-        window.location.href = "/index.html";
+        window.location.href = `${basePath}/index.html`;
     }
     // and if has, add data this product in html
     // call image from google drive link

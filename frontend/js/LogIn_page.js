@@ -40,7 +40,7 @@ function signin(event) {
         if(!data.error) {
             setLoggedInState();
             alert("Login successful");
-            window.location.href = "/Management_page/Management_Page.html";
+            window.location.href = `${basePath}/Management_page/Management_Page.html`;
         } else {
             alert(data.message);
         }
