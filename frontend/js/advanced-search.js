@@ -1,11 +1,12 @@
+const basePath = window.location.pathname.match(/^\/p\/\d+/) ? window.location.pathname.match(/^\/p\/\d+/)[0] : '';
 function getSearchProductName(event) {
     event.preventDefault();
     let searchname = document.getElementById("product-name-search").value; // Get query from a textbox
     document.querySelector(".notfound").innerHTML = "";
     // Remove trailing comma from material string
     console.log(material)
-    let rooturl = `/api/productsearch?name=${searchname}`;
-    if(!searchname)  rooturl = `/api/products`;
+    let rooturl = `${basePath}/api/productsearch?name=${searchname}`;
+    if(!searchname)  rooturl = `${basePath}/api/products`;
     // Construct root URL with searchname and material parameters
 
     console.log(rooturl);
@@ -78,7 +79,7 @@ function advancedSearch(event) {
     let colors = Array.from(colorInputs).map(input => input.value); // Get array of selected colors
     console.log(colors);
 
-    let rooturl = `/api/advancedSearchProduct?P_name=${name}`;
+    let rooturl = `${basePath}/api/advancedSearchProduct?P_name=${name}`;
 
     if (sizes.length > 0) rooturl += `&P_size=${sizes.join(',')}`; // Join sizes array into comma-separated string
     if (colors.length > 0) rooturl += `&P_color=${colors.join(',')}`; // Join colors array into comma-separated string

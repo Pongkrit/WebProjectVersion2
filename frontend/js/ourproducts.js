@@ -1,4 +1,5 @@
-let rooturl = "/api/products";
+const basePath = window.location.pathname.match(/^\/p\/\d+/) ? window.location.pathname.match(/^\/p\/\d+/)[0] : '';
+let rooturl = `${basePath}/api/products`;
 let products = null;
 
 function getProducts() {

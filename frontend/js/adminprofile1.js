@@ -1,4 +1,5 @@
-let rooturl = "/api/accounts";
+const basePath = window.location.pathname.match(/^\/p\/\d+/) ? window.location.pathname.match(/^\/p\/\d+/)[0] : '';
+let rooturl = `${basePath}/api/accounts`;
 let accounts = null;
 
 function getAccounts() {

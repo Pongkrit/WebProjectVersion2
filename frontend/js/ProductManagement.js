@@ -1,8 +1,9 @@
+const basePath = window.location.pathname.match(/^\/p\/\d+/) ? window.location.pathname.match(/^\/p\/\d+/)[0] : '';
 function getSearchProductLists(event) {
     event.preventDefault();
     let id = document.getElementById("product-id-search").value; // Get query from a textbox
-    let rooturl = `/api/product?id=${id}`;
-    if(!id) rooturl = `/api/products`;
+    let rooturl = `${basePath}/api/product?id=${id}`;
+    if(!id) rooturl = `${basePath}/api/products`;
     console.log(id);
 
     console.log(rooturl);
@@ -87,7 +88,7 @@ function insertNewProduct(event) {
     let overview = document.querySelector("#overview").value;
     let description = document.querySelector("#description").value;
 
-    let rooturl = `/api/postproduct`; // Encode query parameter
+    let rooturl = `${basePath}/api/postproduct`; // Encode query parameter
     console.log(rooturl);
 
     // Request URL
@@ -188,7 +189,7 @@ function updateProduct(event){
     let description = document.querySelector("#update-description").value;
 
     // Construct the URL with only non-null parameters
-    let rooturl = `/api/updateproduct?ProductID=${id}`;
+    let rooturl = `${basePath}/api/updateproduct?ProductID=${id}`;
     if (name) rooturl += `&P_name=${name}`;
     if (size) rooturl += `&P_size=${size}`;
     if (quantity) rooturl += `&P_quantity=${quantity}`;
@@ -227,7 +228,7 @@ function updateProduct(event){
 function deleteProduct(event){
     event.preventDefault();
     let id = document.getElementById("product-id-delete").value; // Get query from a textbox
-    let rooturl = `/api/deleteproduct/id=${id}`;
+    let rooturl = `${basePath}/api/deleteproduct/id=${id}`;
 
     console.log(rooturl);
     // Request URL

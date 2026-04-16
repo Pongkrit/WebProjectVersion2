@@ -1,8 +1,9 @@
+const basePath = window.location.pathname.match(/^\/p\/\d+/) ? window.location.pathname.match(/^\/p\/\d+/)[0] : '';
 function getSearchAccountLists(event) {
     event.preventDefault();
     let id = document.getElementById("employee-id-search").value; // Get query from a textbox
-    let rooturl = `/api/account?id=${id}`;
-    if(!id) rooturl = `/api/accounts`;
+    let rooturl = `${basePath}/api/account?id=${id}`;
+    if(!id) rooturl = `${basePath}/api/accounts`;
     console.log(id);
 
     console.log(rooturl);
@@ -85,7 +86,7 @@ function insertNewUser(event) {
         return;
     }
 
-    let rooturl = `/api/postaccount`; // Encode query parameter
+    let rooturl = `${basePath}/api/postaccount`; // Encode query parameter
     console.log(rooturl);
 
     // Request URL
@@ -168,7 +169,7 @@ function updateUser(event){
     let role = document.querySelector("#update-role").value;
 
     // Construct the URL with only non-null parameters
-    let rooturl = `/api/updateaccount?EmpID=${id}`;
+    let rooturl = `${basePath}/api/updateaccount?EmpID=${id}`;
     if (fname) rooturl += `&A_fname=${fname}`;
     if (lname) rooturl += `&A_lname=${lname}`;
     if (username) rooturl += `&L_username=${username}`;
@@ -208,7 +209,7 @@ function updateUser(event){
 function deleteUser(event){
     event.preventDefault();
     let id = document.getElementById("employee-id-delete").value; // Get query from a textbox
-    let rooturl = `/api/deleteaccount/id=${id}`;
+    let rooturl = `${basePath}/api/deleteaccount/id=${id}`;
 
     console.log(rooturl);
     // Request URL

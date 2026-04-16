@@ -1,3 +1,4 @@
+const basePath = window.location.pathname.match(/^\/p\/\d+/) ? window.location.pathname.match(/^\/p\/\d+/)[0] : '';
 function signin(event) {
     event.preventDefault(); // Prevent default form submission behavior
 
@@ -9,7 +10,7 @@ function signin(event) {
         return;
     }
 
-    let rooturl = `/api/signin`;
+    let rooturl = `${basePath}/api/signin`;
 
     function setLoggedInState() {
         sessionStorage.setItem('loggedIn', 'true');

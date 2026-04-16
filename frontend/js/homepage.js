@@ -1,3 +1,4 @@
+const basePath = window.location.pathname.match(/^\/p\/\d+/) ? window.location.pathname.match(/^\/p\/\d+/)[0] : '';
 let map;
 
 async function initMap() {
