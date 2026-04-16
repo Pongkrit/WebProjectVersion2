@@ -50,7 +50,7 @@ app.use('/', express.static(path.join(__dirname, '../frontend')));
 /*
 TEST 1: Testing Login to the Admin Page => Success (Ex.1/3)
 method: PUT
-URL: http://localhost:8131/signin
+URL: http://localhost:8131/signin || /api/signin
 body: raw JSON
 {
     "Login_Info": {
@@ -61,7 +61,7 @@ body: raw JSON
 
 TEST 1: Testing Login to the Admin Page => Success (Ex.2/3)
 method: PUT
-URL: http://localhost:8131/signin
+URL: http://localhost:8131/signin || /api/signin
 body: raw JSON
 {
     "Login_Info": {
@@ -71,7 +71,7 @@ body: raw JSON
 }
 
 TEST 1: Testing Login to the Admin Page => Success (Ex.3/3)
-URL: http://localhost:8131/signin
+URL: http://localhost:8131/signin || /api/signin
 body: raw JSON
 {
     "Login_Info": {
@@ -114,11 +114,11 @@ router.put('/api/signin', function (req, res) {
 /*
 TEST 13: Testing Get Some Product List By ProductID => Search with "1" (Ex.1/2)
 method: GET
-URL: http://localhost:8131/product?id=1
+URL: http://localhost:8131/product?id=1 || /api/product?id=1
 
 TEST 13: Testing Get Some Product List By ProductID => Search with "001" (Ex.2/2)
 method: GET
-URL: http://localhost:8131/product?id=001
+URL: http://localhost:8131/product?id=001 || /api/product?id=001
 */
 // -------------------------------------------------------------
 // method: GET => Get search employee account list
@@ -138,7 +138,7 @@ router.get('/api/product', function (req, res) {
 /*
 TEST 2: Testing Insert a new Product => Success (Ex.1/3)
 method: POST
-URL: http://localhost:8131/postproduct
+URL: http://localhost:8131/postproduct || /api/postproduct
 body: raw JSON
 {
     ProductID: 'P1000',
@@ -156,7 +156,7 @@ body: raw JSON
 
 TEST 2: Testing Insert a new Product => Success (Ex.2/3)
 method: POST
-URL: http://localhost:8131/postproduct
+URL: http://localhost:8131/postproduct || /api/postproduct
 body: raw JSON
 {
     ProductID: 'P1001',
@@ -174,7 +174,7 @@ body: raw JSON
 
 TEST 2: Testing Insert a new Product => Success (Ex.3/3)
 method: POST
-URL: http://localhost:8131/postproduct
+URL: http://localhost:8131/postproduct || /api/postproduct
 body: raw JSON
 {
     ProductID: 'P1002',
@@ -225,11 +225,11 @@ URL: http://localhost:8131/updateproduct?ProductID=P1000&P_size=6&P_price=9990&P
 
 TEST 3: Testing Update a Product Information => Update quantity (Ex.2/3)
 method: POST
-URL: http://localhost:8131/updateproduct?ProductID=P1002&P_quantity=10
+URL: http://localhost:8131/updateproduct?ProductID=P1002&P_quantity=10 || /api/updateproduct?ProductID=P1002&P_quantity=10
 
 TEST 3: Testing Update a Product Information => Uodate name (Ex.3/3)
 method: POST
-URL: http://localhost:8131/updateproduct?ProductID=P1002&P_name=(Tester%20Sudyod)%203-Layers-Button-Corn-Elastic-Braclet%20by%20Borneo%20Pearls
+URL: http://localhost:8131/updateproduct?ProductID=P1002&P_name=(Tester%20Sudyod)%203-Layers-Button-Corn-Elastic-Braclet%20by%20Borneo%20Pearls || /api/updateproduct?ProductID=P1002&P_name=(Tester%20Sudyod)%203-Layers-Button-Corn-Elastic-Braclet%20by%20Borneo%20Pearls
 */
 // -------------------------------------------------------------
 // method: PUT (Update)
@@ -262,15 +262,15 @@ router.post('/api/updateproduct', function (req, res) {
 /*
 TEST 4: Testing Delete a Product By ProductID => Success (Ex.1/3)
 method: DELETE
-URL: http://localhost:8131/deleteproduct/id=P1000
+URL: http://localhost:8131/deleteproduct/id=P1000 || /api/deleteproduct/id=P1000
 
 TEST 4: Testing Delete a Product By ProductID => Success (Ex.2/3)
 method: DELETE
-URL: http://localhost:8131/deleteproduct/id=P1001
+URL: http://localhost:8131/deleteproduct/id=P1001 || /api/deleteproduct/id=P1001
 
 TEST 4: Testing Delete a Product By ProductID => Success (Ex.3/3)
 method: DELETE
-URL: http://localhost:8131/deleteproduct/id=P1002
+URL: http://localhost:8131/deleteproduct/id=P1002 || /api/deleteproduct/id=P1002
 */
 // -------------------------------------------------------------
 // method: DELETE
@@ -292,7 +292,7 @@ router.delete('/api/deleteproduct/id=:id', function (req, res) {
 /*
 TEST 5: Testing Get All Employee Accounts => Success (Ex.1/1)
 method: GET
-URL: http://localhost:8131/accounts
+URL: http://localhost:8131/accounts || /api/deleteproduct/accounts
 */
 // -------------------------------------------------------------
 // method: GET (Select All User Accounts)
@@ -308,11 +308,11 @@ router.get('/api/accounts', function (req, res) {
 /*
 TEST 6: Testing Get Some Employee Accounts By EmpID => Search with "Emp" (Ex.1/2)
 method: GET
-URL: http://localhost:8131/account?id=Emp
+URL: http://localhost:8131/account?id=Emp || /api/account?id=Emp
 
 TEST 6: Testing Get Some Employee Accounts By EmpID => Search with "Emp101" (Ex.2/2)
 method: GET
-URL: http://localhost:8131/account?id=Emp101
+URL: http://localhost:8131/account?id=Emp101 || /api/account?id=Emp101
 */
 // -------------------------------------------------------------
 // method: GET => Get search employee account list
@@ -333,7 +333,7 @@ router.get('/api/account', function (req, res) {
 /*
 TEST 7: Testing Insert an Employee Account => Success (Ex.1/2)
 method: POST
-URL: http://localhost:8131/postaccount
+URL: http://localhost:8131/postaccount || /api/postaccount
 body: raw JSON
 {
     EmpID: 'Emp0000',
@@ -352,7 +352,7 @@ body: raw JSON
 
 TEST 7: Testing Insert an Employee Account => Success (Ex.2/2)
 method: POST
-URL: http://localhost:8131/postaccount
+URL: http://localhost:8131/postaccount  || /api/postaccount
 body: raw JSON
 {
     EmpID: 'Emp3333',
@@ -440,11 +440,10 @@ router.post('/api/postaccount', function (req, res) {
 /*
 TEST 8: Testing Update an Employee Account By EmpID, Username => Update password, gender, contact (Ex.1/2)
 method: PUT
-URL: http://localhost:8131/updateaccount?EmpID=Emp3333&L_username=Thai3333&L_password=123456&A_gender=M&A_contact=069-1267355
-
+URL: http://localhost:8131/updateaccount?EmpID=Emp3333&L_username=Thai3333&L_password=123456&A_gender=M&A_contact=069-1267355 || /api/updateaccount?EmpID=Emp3333&L_username=Thai3333&L_password=123456&A_gender=M&A_contact=069-1267355
 TEST 8: Testing Update an Employee Account By EmpID,Username => Update gender (Ex.2/2)
 method: PUT
-URL: http://localhost:8131/updateaccount?EmpID=Emp3333&L_username=Thai3333&A_gender=F
+URL: http://localhost:8131/updateaccount?EmpID=Emp3333&L_username=Thai3333&A_gender=F || /api/updateaccount?EmpID=Emp3333&L_username=Thai3333&A_gender=F
 */
 // -------------------------------------------------------------
 // method: PUT (Update)
@@ -530,11 +529,11 @@ router.put('/api/updateaccount', function (req, res) {
 /*
 TEST 9: Testing Delete an Employee Account By EmpID => Delete "Emp3333" (Ex.1/2)
 method: DELETE
-URL: http://localhost:8131/deleteaccount/id=Emp3333
+URL: http://localhost:8131/deleteaccount/id=Emp3333 || /api/deleteaccount/id=Emp3333
 
 TEST 9: Testing Delete an Employee Account By EmpID => Delete "Emp0000" (Ex.2/2)
 method: DELETE
-URL: http://localhost:8131/deleteaccount/id=Emp0000
+URL: http://localhost:8131/deleteaccount/id=Emp0000 || /api/deleteaccount/id=Emp0000
 */
 // -------------------------------------------------------------
 // method: DELETE
@@ -590,7 +589,7 @@ router.delete('/api/deleteaccount/id=:id', async function (req, res) {
 /*
 TEST 10: Testing Get All Products => Success (Ex.1/1)
 method: GET
-URL: http://localhost:8131/products
+URL: http://localhost:8131/products || /api/products
 */
 // -------------------------------------------------------------
 // method: GET (Select All Products)
@@ -608,11 +607,11 @@ router.get('/api/products', function (req, res) {
 /*
 TEST 11: Testing Get Some Products By Product Name => Search with "P" (Ex.1/2)
 method: GET
-URL: http://localhost:8131/productsearch?name=P
+URL: http://localhost:8131/productsearch?name=P || /api/productsearch?name=P
 
 TEST 11: Testing Get Some Products By Product Name => Search with "z" (Ex.2/2)
 method: GET
-URL: http://localhost:8131/productsearch?name=z
+URL: http://localhost:8131/productsearch?name=z || /api/productsearch?name=z
 */
 // -------------------------------------------------------------
 // method: GET (Select) => Searching by Product_Name
@@ -639,16 +638,16 @@ router.get('/api/productsearch', function (req, res) {
 TEST 12: Testing Get Some Products By Product Name with Some Criterias => Search with "z", 
          sort by z-a, size, material, color (Ex.1/3)
 method: GET
-URL: http://localhost:8131/advancedSearchProduct?P_name=z&P_size=5&P_color=Pink&P_material=Q&sort=z-a
+URL: http://localhost:8131/advancedSearchProduct?P_name=z&P_size=5&P_color=Pink&P_material=Q&sort=z-a || /api/advancedSearchProduct?P_name=z&P_size=5&P_color=Pink&P_material=Q&sort=z-a
 
 TEST 12: Testing Get Some Products By Product Name with Some Criterias => Search with "g", 
          size, sort by price (high to low) (Ex.2/3)
 method: GET
-URL: http://localhost:8131/advancedSearchProduct?P_name=g&P_size=4&sort=h-l
+URL: http://localhost:8131/advancedSearchProduct?P_name=g&P_size=4&sort=h-l || /api/advancedSearchProduct?P_name=g&P_size=4&sort=h-l
 
 TEST 12: Testing Get Some Products By Product Name with Some Criterias => Search with "A", material (Ex.3/3)
 method: GET
-URL: http://localhost:8131/advancedSearchProduct?P_name=A&P_material=J
+URL: http://localhost:8131/advancedSearchProduct?P_name=A&P_material=J || /api/advancedSearchProduct?P_name=A&P_material=J
 */
 // -------------------------------------------------------------
 // method: GET (Select) => Advanced Search

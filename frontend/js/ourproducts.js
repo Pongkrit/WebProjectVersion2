@@ -24,7 +24,7 @@ function addDataToHTML(){
         products.forEach(product => {
             // create new element item
             let newProduct = document.createElement('a');
-            newProduct.href = "/Detail_Product_page/Detail_Product_Page.html?productID=" + product.ProductID;
+            newProduct.href = "../Detail_Product_page/Detail_Product_Page.html?productID=" + product.ProductID;
             newProduct.classList.add('item');
 
             // call image from google drive link
