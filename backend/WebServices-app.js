@@ -41,6 +41,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(router);
 
+// Serve the frontend static files so frontend APIs work correctly via relative paths
+app.use('/', express.static(path.join(__dirname, '../frontend')));
 
 // ======================= (CHING) START: LOGIN PAGE =========================== //
 
@@ -79,7 +81,7 @@ body: raw JSON
 }
 */
 // -------------------------------------------------------------
-router.('/api/', function (req, res) {
+router.put('/api/signin', function (req, res) {
     let loginInfo = req.body.Login_Info;
     if (!loginInfo || !loginInfo.L_username || !loginInfo.L_password) {
         return res.status(400).send({ error: true, message: 'Please provide correct account information' });
@@ -120,7 +122,7 @@ URL: http://localhost:8131/product?id=001
 */
 // -------------------------------------------------------------
 // method: GET => Get search employee account list
-router.('/api/', function (req, res) {
+router.get('/api/product', function (req, res) {
     let productId = req.query.id;
     if (!productId) {
         return res.status(400).send({ error: true, message: 'Please provide Product id.' });
@@ -190,7 +192,7 @@ body: raw JSON
 */
 // -------------------------------------------------------------
 // // method: POST (Insert)
-router.('/api/', function (req, res) {
+router.post('/api/postproduct', function (req, res) {
     let product = req.body; // Access the entire request body
     console.log(product);
 
@@ -231,7 +233,7 @@ URL: http://localhost:8131/updateproduct?ProductID=P1002&P_name=(Tester%20Sudyod
 */
 // -------------------------------------------------------------
 // method: PUT (Update)
-router.('/api/', function (req, res) {
+router.post('/api/updateproduct', function (req, res) {
     let productId = req.query.ProductID; // Extract product ID from query parameter
     let product = req.query; // Extract product details from query parameters
 
@@ -294,7 +296,7 @@ URL: http://localhost:8131/accounts
 */
 // -------------------------------------------------------------
 // method: GET (Select All User Accounts)
-router.('/api/', function (req, res) {
+router.get('/api/accounts', function (req, res) {
     dbConn.query('SELECT * FROM Account a JOIN Login_Info l ON l.EmpID = a.EmpID', function (error, results) {
         if (error) throw error;
         return res.send({ error: false, data: results, message: 'Account list.' });
@@ -314,7 +316,7 @@ URL: http://localhost:8131/account?id=Emp101
 */
 // -------------------------------------------------------------
 // method: GET => Get search employee account list
-router.('/api/', function (req, res) {
+router.get('/api/account', function (req, res) {
     let emp_id = req.query.id;
     if (!emp_id) {
         return res.status(400).send({ error: true, message: 'Please provide employee id.' });
@@ -369,7 +371,7 @@ body: raw JSON
 */
 // -------------------------------------------------------------
 // method: POST (Insert) => Add new employee account
-router.('/api/', function (req, res) {
+router.post('/api/postaccount', function (req, res) {
     let account = req.body;
     console.log(account);
 
@@ -446,7 +448,7 @@ URL: http://localhost:8131/updateaccount?EmpID=Emp3333&L_username=Thai3333&A_gen
 */
 // -------------------------------------------------------------
 // method: PUT (Update)
-router.('/api/', function (req, res) {
+router.put('/api/updateaccount', function (req, res) {
     let empId = req.query.EmpID;
     let account = req.query;
 
@@ -592,7 +594,7 @@ URL: http://localhost:8131/products
 */
 // -------------------------------------------------------------
 // method: GET (Select All Products)
-router.('/api/', function (req, res) {
+router.get('/api/products', function (req, res) {
     dbConn.query('SELECT * FROM Product', function (error, results) {
         if (error) throw error;
         return res.send({ error: false, data: results, message: 'Product list.' });
@@ -614,7 +616,7 @@ URL: http://localhost:8131/productsearch?name=z
 */
 // -------------------------------------------------------------
 // method: GET (Select) => Searching by Product_Name
-router.('/api/', function (req, res) {
+router.get('/api/productsearch', function (req, res) {
     let product_name = req.query.name;
     console.log(`Search the product name contains ${product_name}`);
     if (!product_name) {
@@ -650,7 +652,7 @@ URL: http://localhost:8131/advancedSearchProduct?P_name=A&P_material=J
 */
 // -------------------------------------------------------------
 // method: GET (Select) => Advanced Search
-router.('/api/', function (req, res) {
+router.get('/api/advancedSearchProduct', function (req, res) {
     let product_name = req.query.P_name;
     let product_size = req.query.P_size;
     let product_color = req.query.P_color;
