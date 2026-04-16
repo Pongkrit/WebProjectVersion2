@@ -2,9 +2,9 @@
   "name": "webservices",
   "version": "1.0.0",
   "description": "",
-  "main": "Webservices-app.js",
+  "main": "WebServices-app.js",
   "scripts": {
-    "start": "nodemon Webservices-app.js"
+    "start": "nodemon WebServices-app.js"
   },
   "author": "Chayanid Termphaiboon, 6588204",
   "license": "ISC",
