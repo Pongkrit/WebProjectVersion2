@@ -35,7 +35,7 @@ function getSearchAccountLists(event) {
 
                 data.data.forEach(account => {
                     tableHTML += `
-                        <tr  onclick="window.location.href = `${basePath}/Admin_Profile1/adminprofile1.html?EmpID=${account.EmpID}`">
+                        <tr  onclick="window.location.href = '${basePath}/Admin_Profile1/adminprofile1.html?EmpID=${account.EmpID}'">
                             <td>${account.EmpID}</td>
                             <td>${account.A_fname} ${account.A_lname}</td>
                             <td>${account.A_gender}</td>
@@ -133,7 +133,7 @@ function insertNewUser(event) {
                     <th>Password</th>
                     <th>Role</th>
                 </tr>
-                <tr  onclick="window.location.href = `${basePath}/Admin_Profile1/adminprofile1.html?EmpID=${account.EmpID}`">
+                <tr  onclick="window.location.href = '${basePath}/Admin_Profile1/adminprofile1.html?EmpID=${account.EmpID}'">
                     <td>${id}</td>
                     <td>${fname} ${lname}</td>
                     <td>${gender}</td>

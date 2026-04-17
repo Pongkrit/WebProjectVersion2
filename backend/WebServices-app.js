@@ -233,7 +233,7 @@ URL: http://localhost:8131/updateproduct?ProductID=P1002&P_name=(Tester%20Sudyod
 */
 // -------------------------------------------------------------
 // method: PUT (Update)
-router.post('/api/updateproduct', function (req, res) {
+router.put('/api/updateproduct', function (req, res) {
     let productId = req.query.ProductID; // Extract product ID from query parameter
     let product = req.query; // Extract product details from query parameters
 
